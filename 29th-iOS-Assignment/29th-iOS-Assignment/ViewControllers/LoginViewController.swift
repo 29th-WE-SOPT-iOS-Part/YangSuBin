@@ -9,24 +9,35 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    // MARK: - Properties
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var pwTextField: UITextField!
     @IBOutlet weak var nextButton: UIButton!
     
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 초기 다음버튼 비활성화
-        nextButton.isEnabled = false
-        
-        // 요소에 따라 정의해둔 함수를 실행
+        configUI()
+        setupAddTarget()
+        hideKeyboardWhenTappedAround()
+    }
+    
+    // MARK: - Custom Method
+    func setupAddTarget() {
+        /// 요소에 따라 정의해둔 함수를 실행
         nameTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         emailTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         pwTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
-        
     }
     
+    func configUI() {
+        /// 초기 다음버튼 비활성화
+        nextButton.isEnabled = false
+    }
+    
+    // MARK: - @IBAction
     @IBAction func touchUpToSuccess(_ sender: Any) {
         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SuccessViewController") as? SuccessViewController else {return}
         
@@ -41,13 +52,10 @@ class LoginViewController: UIViewController {
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
-    // textField 변화에 따라 수행할 함수
+    // MARK: - @objc
+    /// textField 변화에 따라 수행할 함수
     @objc
-    func textFieldDidChange(textField: UITextField) {
-        if self.nameTextField.hasText && self.emailTextField.hasText && self.pwTextField.hasText {
-            nextButton.isEnabled = true
-        } else {
-            nextButton.isEnabled = false
-        }
+    func textFieldDidChange(textField: UITextField) {        
+        nextButton.isEnabled = nameTextField.hasText && emailTextField.hasText && pwTextField.hasText ?  true : false
     }
 }

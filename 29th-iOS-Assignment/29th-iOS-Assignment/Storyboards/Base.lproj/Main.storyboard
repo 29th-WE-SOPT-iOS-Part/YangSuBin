@@ -258,14 +258,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="환영합니다!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8FU-Q0-spX">
-                                <rect key="frame" x="147" y="389.5" width="120" height="31.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAj-n2-aWP">
-                                <rect key="frame" x="30" y="481" width="354" height="50"/>
+                                <rect key="frame" x="30" y="455.5" width="354" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="c0g-db-yu4"/>
                                 </constraints>
@@ -282,17 +276,15 @@
                         <viewLayoutGuide key="safeArea" id="Plq-aw-c2k"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="cAj-n2-aWP" firstAttribute="top" secondItem="3sX-LS-IAa" secondAttribute="bottom" constant="80" id="2Xi-eY-pm6"/>
                             <constraint firstItem="Plq-aw-c2k" firstAttribute="trailing" secondItem="3sX-LS-IAa" secondAttribute="trailing" constant="134" id="3R8-3N-kyc"/>
                             <constraint firstItem="cAj-n2-aWP" firstAttribute="leading" secondItem="Plq-aw-c2k" secondAttribute="leading" constant="30" id="7uP-XH-Ncu"/>
-                            <constraint firstItem="cAj-n2-aWP" firstAttribute="top" secondItem="8FU-Q0-spX" secondAttribute="bottom" constant="60" id="BlP-n7-2E9"/>
                             <constraint firstItem="3sX-LS-IAa" firstAttribute="top" secondItem="CBx-hk-b9T" secondAttribute="bottom" constant="60" id="PW7-Dn-Feb"/>
                             <constraint firstItem="3sX-LS-IAa" firstAttribute="leading" secondItem="Plq-aw-c2k" secondAttribute="leading" constant="134" id="ZZP-Ee-hBa"/>
                             <constraint firstItem="CBx-hk-b9T" firstAttribute="centerX" secondItem="qPy-Gm-M0k" secondAttribute="centerX" id="ZzJ-8V-SMm"/>
-                            <constraint firstItem="8FU-Q0-spX" firstAttribute="top" secondItem="3sX-LS-IAa" secondAttribute="bottom" constant="14" id="bgt-Vr-tS4"/>
                             <constraint firstItem="cAj-n2-aWP" firstAttribute="centerX" secondItem="qPy-Gm-M0k" secondAttribute="centerX" id="g5D-Sg-zTY"/>
                             <constraint firstItem="3sX-LS-IAa" firstAttribute="centerX" secondItem="qPy-Gm-M0k" secondAttribute="centerX" id="gny-vB-Kp8"/>
                             <constraint firstItem="Plq-aw-c2k" firstAttribute="trailing" secondItem="cAj-n2-aWP" secondAttribute="trailing" constant="30" id="n2I-w5-8YF"/>
-                            <constraint firstItem="8FU-Q0-spX" firstAttribute="centerX" secondItem="qPy-Gm-M0k" secondAttribute="centerX" id="s31-4C-5IZ"/>
                             <constraint firstItem="CBx-hk-b9T" firstAttribute="top" secondItem="Plq-aw-c2k" secondAttribute="top" constant="180" id="u92-Nd-5bv"/>
                         </constraints>
                     </view>
