@@ -21,6 +21,7 @@ class LoginViewController: UIViewController {
         
         configUI()
         setupAddTarget()
+        hideKeyboardWhenTappedAround()
     }
     
     // MARK: - Custom Method
@@ -54,13 +55,7 @@ class LoginViewController: UIViewController {
     // MARK: - @objc
     /// textField 변화에 따라 수행할 함수
     @objc
-    func textFieldDidChange(textField: UITextField) {
-//        if self.nameTextField.hasText && self.emailTextField.hasText && self.pwTextField.hasText {
-//            nextButton.isEnabled = true
-//        } else {
-//            nextButton.isEnabled = false
-//        }
-        
+    func textFieldDidChange(textField: UITextField) {        
         nextButton.isEnabled = nameTextField.hasText && emailTextField.hasText && pwTextField.hasText ?  true : false
     }
 }

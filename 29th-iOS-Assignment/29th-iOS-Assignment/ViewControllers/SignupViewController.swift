@@ -22,6 +22,7 @@ class SignupViewController: UIViewController {
         
         configUI()
         setupAddTarget()
+        hideKeyboardWhenTappedAround()
     }
     
     // MARK: - Custom Method
@@ -51,24 +52,13 @@ class SignupViewController: UIViewController {
     /// textField 변화에 따라 수행할 함수
     @objc
     func textFieldDidChange(textField: UITextField) {
-        pwTextField.isSecureTextEntry = pwTextField.isSecureTextEntry == true ? false : true
-        showPwButton.tintColor = pwTextField.isSecureTextEntry == true ? .systemBlue : .lightGray
-//        if self.nameTextField.hasText && self.emailTextField.hasText && self.pwTextField.hasText {
-//            nextButton.isEnabled = true
-//        } else {
-//            nextButton.isEnabled = false
-//        }
+        nextButton.isEnabled = nameTextField.hasText && emailTextField.hasText && pwTextField.hasText ?  true : false
     }
     
     /// 비밀번호 표시 버튼에 따라 수행할 함수
     @objc
     func showPwButtonClicked(button: UIButton) {
-        if pwTextField.isSecureTextEntry == true {
-            pwTextField.isSecureTextEntry = false
-            showPwButton.tintColor = .systemBlue
-        } else {
-            pwTextField.isSecureTextEntry = true
-            showPwButton.tintColor = .lightGray
-        }
+        pwTextField.isSecureTextEntry = pwTextField.isSecureTextEntry == true ? false : true
+        showPwButton.tintColor = pwTextField.isSecureTextEntry == true ? .lightGray : .systemBlue
     }
 }
