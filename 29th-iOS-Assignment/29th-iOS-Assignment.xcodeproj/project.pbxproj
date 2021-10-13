@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BBF45B9271688AD00686134 /* YoutubeMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BBF45B8271688AD00686134 /* YoutubeMain.storyboard */; };
+		2BBF45BB2716890300686134 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF45BA2716890300686134 /* CustomTabBarController.swift */; };
+		2BBF45BD2716891E00686134 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF45BC2716891E00686134 /* HomeVC.swift */; };
+		2BBF45BF2716892B00686134 /* ShortsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF45BE2716892B00686134 /* ShortsVC.swift */; };
+		2BBF45C12716893B00686134 /* AddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF45C02716893B00686134 /* AddVC.swift */; };
+		2BBF45C32716894900686134 /* SubscribeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF45C22716894900686134 /* SubscribeVC.swift */; };
+		2BBF45C5271689B100686134 /* LockerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF45C4271689B100686134 /* LockerVC.swift */; };
 		2BE4D6E62715F0DD00436945 /* UIVIewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE4D6E52715F0DD00436945 /* UIVIewController+Extension.swift */; };
 		2BF508CB270B0A50004EF83D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF508CA270B0A50004EF83D /* AppDelegate.swift */; };
 		2BF508CD270B0A50004EF83D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF508CC270B0A50004EF83D /* SceneDelegate.swift */; };
@@ -22,6 +29,13 @@
 /* Begin PBXFileReference section */
 		1E0BF1C4A0D185311E8AC6CE /* Pods-29th-iOS-Assignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-29th-iOS-Assignment.release.xcconfig"; path = "Target Support Files/Pods-29th-iOS-Assignment/Pods-29th-iOS-Assignment.release.xcconfig"; sourceTree = "<group>"; };
 		2B76D5275535EEC539B4BEEF /* Pods_29th_iOS_Assignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_29th_iOS_Assignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BBF45B8271688AD00686134 /* YoutubeMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YoutubeMain.storyboard; sourceTree = "<group>"; };
+		2BBF45BA2716890300686134 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		2BBF45BC2716891E00686134 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		2BBF45BE2716892B00686134 /* ShortsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortsVC.swift; sourceTree = "<group>"; };
+		2BBF45C02716893B00686134 /* AddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVC.swift; sourceTree = "<group>"; };
+		2BBF45C22716894900686134 /* SubscribeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeVC.swift; sourceTree = "<group>"; };
+		2BBF45C4271689B100686134 /* LockerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockerVC.swift; sourceTree = "<group>"; };
 		2BE4D6E52715F0DD00436945 /* UIVIewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIewController+Extension.swift"; sourceTree = "<group>"; };
 		2BF508C7270B0A50004EF83D /* 29th-iOS-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "29th-iOS-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BF508CA270B0A50004EF83D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +106,7 @@
 			children = (
 				2BF508D0270B0A50004EF83D /* Main.storyboard */,
 				2BF508D5270B0A51004EF83D /* LaunchScreen.storyboard */,
+				2BBF45B8271688AD00686134 /* YoutubeMain.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -102,6 +117,12 @@
 				2BF508E3270B0BCB004EF83D /* LoginViewController.swift */,
 				2BF508E5270B0EE6004EF83D /* SignupViewController.swift */,
 				2BF508E7270B0F18004EF83D /* SuccessViewController.swift */,
+				2BBF45BA2716890300686134 /* CustomTabBarController.swift */,
+				2BBF45BC2716891E00686134 /* HomeVC.swift */,
+				2BBF45BE2716892B00686134 /* ShortsVC.swift */,
+				2BBF45C02716893B00686134 /* AddVC.swift */,
+				2BBF45C22716894900686134 /* SubscribeVC.swift */,
+				2BBF45C4271689B100686134 /* LockerVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -121,7 +142,6 @@
 				4D0A1778A9851177E1AC83B6 /* Pods-29th-iOS-Assignment.debug.xcconfig */,
 				1E0BF1C4A0D185311E8AC6CE /* Pods-29th-iOS-Assignment.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -196,6 +216,7 @@
 				2BF508D7270B0A51004EF83D /* LaunchScreen.storyboard in Resources */,
 				2BF508D4270B0A51004EF83D /* Assets.xcassets in Resources */,
 				2BF508D2270B0A50004EF83D /* Main.storyboard in Resources */,
+				2BBF45B9271688AD00686134 /* YoutubeMain.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,11 +270,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BF508E4270B0BCB004EF83D /* LoginViewController.swift in Sources */,
+				2BBF45BD2716891E00686134 /* HomeVC.swift in Sources */,
+				2BBF45C5271689B100686134 /* LockerVC.swift in Sources */,
+				2BBF45BB2716890300686134 /* CustomTabBarController.swift in Sources */,
 				2BF508CB270B0A50004EF83D /* AppDelegate.swift in Sources */,
+				2BBF45C12716893B00686134 /* AddVC.swift in Sources */,
 				2BE4D6E62715F0DD00436945 /* UIVIewController+Extension.swift in Sources */,
 				2BF508E6270B0EE6004EF83D /* SignupViewController.swift in Sources */,
 				2BF508E8270B0F18004EF83D /* SuccessViewController.swift in Sources */,
+				2BBF45BF2716892B00686134 /* ShortsVC.swift in Sources */,
 				2BF508CD270B0A50004EF83D /* SceneDelegate.swift in Sources */,
+				2BBF45C32716894900686134 /* SubscribeVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
