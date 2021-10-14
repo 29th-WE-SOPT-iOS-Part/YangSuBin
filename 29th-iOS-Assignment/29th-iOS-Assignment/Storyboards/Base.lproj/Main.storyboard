@@ -49,12 +49,12 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJ6-82-I1X">
-                                <rect key="frame" x="30" y="728.5" width="97.5" height="33.5"/>
+                                <rect key="frame" x="30" y="729.5" width="98" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.25882352941176467" green="0.52156862745098043" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="계정 만들기">
-                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="16"/>
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="16"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="touchUpToSignup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ruV-z4-QmH"/>
@@ -217,7 +217,7 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="touchUpToGoAnother:" destination="gkV-Sw-GPO" eventType="touchUpInside" id="tVY-7l-DCN"/>
+                                    <action selector="touchUpToGoAnotherAccount:" destination="gkV-Sw-GPO" eventType="touchUpInside" id="zzO-QC-SJS"/>
                                 </connections>
                             </button>
                         </subviews>

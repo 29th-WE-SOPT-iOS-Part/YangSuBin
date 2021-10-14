@@ -65,8 +65,21 @@ class SuccessViewController: UIViewController {
     }
     
     // MARK: - @IBAction
-    /// 나중에 추가 과제 진행하면서 지울 부분
     @IBAction func touchUpToGoBack(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        /// Main이 아닌 따로 생성한 YouTubeMain이라는 스토리보드를 선언
+        let youtubeMainStoryboard = UIStoryboard.init(name: "YoutubeMain", bundle: nil)
+        guard let nextVC = youtubeMainStoryboard.instantiateViewController(withIdentifier: "CustomTabBarController") as? CustomTabBarController else {return}
+        
+        nextVC.modalPresentationStyle = .fullScreen
+        nextVC.modalTransitionStyle = .crossDissolve
+        
+        present(nextVC, animated: true, completion: nil)
+    }
+    
+    @IBAction func touchUpToGoAnotherAccount(_ sender: Any) {
+        guard let pvc = self.presentingViewController as? UINavigationController else {return}
+        self.dismiss(animated: true) {
+            pvc.popToRootViewController(animated: true)
+        }
     }
 }

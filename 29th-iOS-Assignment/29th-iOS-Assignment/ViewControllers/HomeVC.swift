@@ -18,7 +18,7 @@ class HomeVC: UIViewController {
 
     // MARK: - Custom Method
     func configUI() {
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .white
     }
     /*
     // MARK: - Navigation

@@ -36,7 +36,6 @@ class SignupViewController: UIViewController {
         /// 초기 다음버튼 비활성화
         nextButton.isEnabled = false
         logoImageView.image = UIImage(named: "Google")
-        
     }
     
     func setupLayout() {
