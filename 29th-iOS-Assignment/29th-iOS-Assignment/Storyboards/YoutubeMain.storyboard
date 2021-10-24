@@ -85,10 +85,10 @@
             </objects>
             <point key="canvasLocation" x="1003" y="753"/>
         </scene>
-        <!--CustomTabBarController-->
+        <!--CustomTBC-->
         <scene sceneID="KGm-Ed-HuL">
             <objects>
-                <tabBarController storyboardIdentifier="CustomTabBarController" title="CustomTabBarController" id="QFe-0z-xak" customClass="CustomTabBarController" customModule="_9th_iOS_Assignment" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="CustomTabBarController" title="CustomTBC" id="QFe-0z-xak" customClass="CustomTBC" customModule="_9th_iOS_Assignment" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LGN-D3-qIo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
