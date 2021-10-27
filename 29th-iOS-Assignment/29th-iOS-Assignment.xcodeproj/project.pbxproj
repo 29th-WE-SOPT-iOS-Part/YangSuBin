@@ -14,6 +14,7 @@
 		2BBF45C12716893B00686134 /* AddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF45C02716893B00686134 /* AddVC.swift */; };
 		2BBF45C32716894900686134 /* SubscribeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF45C22716894900686134 /* SubscribeVC.swift */; };
 		2BBF45C5271689B100686134 /* LockerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF45C4271689B100686134 /* LockerVC.swift */; };
+		2BC3B1AE2729C24300240249 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC3B1AD2729C24300240249 /* UIView+Extension.swift */; };
 		2BE4D6E62715F0DD00436945 /* UIVIewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE4D6E52715F0DD00436945 /* UIVIewController+Extension.swift */; };
 		2BF508CB270B0A50004EF83D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF508CA270B0A50004EF83D /* AppDelegate.swift */; };
 		2BF508CD270B0A50004EF83D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF508CC270B0A50004EF83D /* SceneDelegate.swift */; };
@@ -36,6 +37,7 @@
 		2BBF45C02716893B00686134 /* AddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVC.swift; sourceTree = "<group>"; };
 		2BBF45C22716894900686134 /* SubscribeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeVC.swift; sourceTree = "<group>"; };
 		2BBF45C4271689B100686134 /* LockerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockerVC.swift; sourceTree = "<group>"; };
+		2BC3B1AD2729C24300240249 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		2BE4D6E52715F0DD00436945 /* UIVIewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIewController+Extension.swift"; sourceTree = "<group>"; };
 		2BF508C7270B0A50004EF83D /* 29th-iOS-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "29th-iOS-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BF508CA270B0A50004EF83D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				2BE4D6E52715F0DD00436945 /* UIVIewController+Extension.swift */,
+				2BC3B1AD2729C24300240249 /* UIView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BF508E4270B0BCB004EF83D /* LoginViewController.swift in Sources */,
+				2BC3B1AE2729C24300240249 /* UIView+Extension.swift in Sources */,
 				2BBF45BD2716891E00686134 /* HomeVC.swift in Sources */,
 				2BBF45C5271689B100686134 /* LockerVC.swift in Sources */,
 				2BBF45BB2716890300686134 /* CustomTBC.swift in Sources */,
