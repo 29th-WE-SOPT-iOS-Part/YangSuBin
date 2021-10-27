@@ -38,55 +38,6 @@ class SignupViewController: UIViewController {
         logoImageView.image = UIImage(named: "Google")
     }
     
-//    func setupLayout() {
-//        logoImageView.snp.makeConstraints { make in
-//            make.top.equalToSuperview().offset(100)
-//            make.centerX.equalToSuperview()
-//            make.width.equalTo(117)
-//            make.height.equalTo(40)
-//        }
-//
-//        titleLabel.snp.makeConstraints { make in
-//            make.top.equalTo(logoImageView.snp.bottom).offset(14)
-//            make.centerX.equalToSuperview()
-//        }
-//
-//        nameTextField.snp.makeConstraints { make in
-//            make.top.equalTo(titleLabel.snp.bottom).offset(128)
-//            make.leading.trailing.equalToSuperview().inset(22)
-//            make.height.equalTo(50)
-//        }
-//
-//        emailTextField.snp.makeConstraints { make in
-//            make.top.equalTo(nameTextField.snp.bottom).offset(17)
-//            make.leading.trailing.equalToSuperview().inset(22)
-//            make.height.equalTo(50)
-//        }
-//
-//        pwTextField.snp.makeConstraints { make in
-//            make.top.equalTo(emailTextField.snp.bottom).offset(17)
-//            make.leading.trailing.equalToSuperview().inset(22)
-//            make.height.equalTo(50)
-//        }
-//
-//        showPwButton.snp.makeConstraints { make in
-//            make.top.equalTo(pwTextField.snp.bottom).offset(17)
-//            make.leading.equalToSuperview().inset(21)
-//            make.width.height.equalTo(18)
-//        }
-//
-//        showPwLabel.snp.makeConstraints { make in
-//            make.centerY.equalTo(showPwButton.snp.centerY)
-//            make.leading.equalTo(showPwButton.snp.trailing).offset(11)
-//        }
-//
-//        nextButton.snp.makeConstraints { make in
-//            make.top.equalTo(showPwButton.snp.bottom).offset(31)
-//            make.leading.trailing.equalToSuperview().inset(22)
-//            make.height.equalTo(50)
-//        }
-//    }
-    
     func setupAddTarget() {
         /// 요소에 따라 정의해둔 함수를 실행
         nameTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)

@@ -61,7 +61,10 @@ class HomeVC: UIViewController {
         let xibName = UINib(nibName: ContentTVC.identifier, bundle: nil)
         contentTableView.register(xibName, forCellReuseIdentifier: ContentTVC.identifier)
     }
-    
+}
+
+// MARK: - Layout
+extension HomeVC {
     func setupLayout() {
         topView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(50)
@@ -110,13 +113,14 @@ class HomeVC: UIViewController {
             make.leading.trailing.bottom.equalToSuperview()
         }
     }
-
 }
 
+// MARK: - UICollectionViewDelegate
 extension HomeVC: UICollectionViewDelegate {
     
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
 extension HomeVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 72, height: 104)
@@ -135,6 +139,7 @@ extension HomeVC: UICollectionViewDelegateFlowLayout {
     }
 }
 
+// MARK: - UICollectionViewDataSource
 extension HomeVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return channelNameList.count
@@ -149,12 +154,14 @@ extension HomeVC: UICollectionViewDataSource {
     }
 }
 
+// MARK: - UITableViewDelegate
 extension HomeVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 306
     }
 }
 
+// MARK: - UITableViewDataSource
 extension HomeVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return contentTitleList.count

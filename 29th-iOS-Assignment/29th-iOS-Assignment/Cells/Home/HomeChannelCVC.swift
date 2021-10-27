@@ -10,12 +10,13 @@ import UIKit
 class HomeChannelCVC: UICollectionViewCell {
     static let identifier = "HomeChannelCVC"
     
+    // MARK: - Properties
     @IBOutlet weak var channelImageView: UIImageView!
     @IBOutlet weak var channelNameLabel: UILabel!
     
+    // MARK: - Custom Method
     func setData(channelName: String, channelImage: String) {
         channelNameLabel.text = channelName
         channelImageView.image = UIImage(named: channelImage)
-//        channelImageView.backgroundColor = .yellow
     }
 }

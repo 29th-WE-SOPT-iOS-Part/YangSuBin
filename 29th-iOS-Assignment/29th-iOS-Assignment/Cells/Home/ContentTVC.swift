@@ -10,12 +10,14 @@ import UIKit
 class ContentTVC: UITableViewCell {
     static let identifier = "ContentTVC"
 
+    // MARK: - @IBOutlet
     @IBOutlet weak var contentImageView: UIImageView!
     @IBOutlet weak var contentChannelImageView: UIImageView!
     @IBOutlet weak var contentTitleLabel: UILabel!
     @IBOutlet weak var contentSubLabel: UILabel!
     @IBOutlet weak var contentMoreButton: UIButton!
     
+    // MARK: - Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -29,10 +31,12 @@ class ContentTVC: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    // MARK: - Custom Method
     func configUI() {
         contentTitleLabel.numberOfLines = 2
         contentTitleLabel.text = "4차 iOS 세미나: 라이브러리 사용과 함께 치킨 먹는 방법"
         contentSubLabel.text = "WE SOPT · 조회수 100만회 · 3주전"
+        contentImageView.contentMode = .scaleToFill
     }
     
     func setupLayout(){

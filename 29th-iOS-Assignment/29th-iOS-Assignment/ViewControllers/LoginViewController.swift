@@ -41,55 +41,6 @@ class LoginViewController: UIViewController {
         subLabel.text = "Youtube도 이동하면서 계속하세요.\n앱 및 safari에서도 Google 서비스에 로그인됩니다."
     }
     
-//    func setupLayout() {
-//        logoImageView.snp.makeConstraints { make in
-//            make.top.equalToSuperview().offset(100)
-//            make.centerX.equalToSuperview()
-//            make.width.equalTo(117)
-//            make.height.equalTo(40)
-//        }
-//
-//        titleLabel.snp.makeConstraints { make in
-//            make.top.equalTo(logoImageView.snp.bottom).offset(14)
-//            make.centerX.equalToSuperview()
-//        }
-//
-//        subLabel.snp.makeConstraints { make in
-//            make.top.equalTo(titleLabel.snp.bottom).offset(14)
-//            make.centerX.equalToSuperview()
-//        }
-//
-//        nameTextField.snp.makeConstraints { make in
-//            make.top.equalTo(subLabel.snp.bottom).offset(68)
-//            make.leading.trailing.equalToSuperview().inset(22)
-//            make.height.equalTo(50)
-//        }
-//
-//        emailTextField.snp.makeConstraints { make in
-//            make.top.equalTo(nameTextField.snp.bottom).offset(17)
-//            make.leading.trailing.equalToSuperview().inset(22)
-//            make.height.equalTo(50)
-//        }
-//
-//        pwTextField.snp.makeConstraints { make in
-//            make.top.equalTo(emailTextField.snp.bottom).offset(17)
-//            make.leading.trailing.equalToSuperview().inset(22)
-//            make.height.equalTo(50)
-//        }
-//
-//        signUpButton.snp.makeConstraints { make in
-//            make.top.equalTo(pwTextField.snp.bottom).offset(73)
-//            make.leading.equalToSuperview().inset(22)
-//        }
-//
-//        nextButton.snp.makeConstraints { make in
-//            make.centerY.equalTo(signUpButton.snp.centerY)
-//            make.trailing.equalToSuperview().inset(22)
-//            make.width.equalTo(74)
-//            make.height.equalTo(50)
-//        }
-//    }
-    
     func setupAddTarget() {
         /// 요소에 따라 정의해둔 함수를 실행
         nameTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
