@@ -48,15 +48,12 @@ class HomeVC: UIViewController {
     func configUI() {
         view.backgroundColor = .white
         
-        topView.backgroundColor = .gray
-        logoImageView.backgroundColor = .blue
-        windowButton.backgroundColor = .yellow
-        notiButton.backgroundColor = .red
-        searchButton.backgroundColor = .orange
-        profileButton.backgroundColor = .black
+        logoImageView.image = UIImage(named: "premiumLogo")
+        windowButton.setImage(UIImage(named: "windowSharingIcon"), for: .normal)
+        notiButton.setImage(UIImage(named: "notificationIcon"), for: .normal)
+        searchButton.setImage(UIImage(named: "SearchIcon"), for: .normal)
+        profileButton.setImage(UIImage(named: "wesoptProfile"), for: .normal)
         
-        contentTableView.backgroundColor = .green
-        channelCollectionView.backgroundColor = .brown
         channelCollectionView.showsHorizontalScrollIndicator = false
     }
     
@@ -75,7 +72,6 @@ class HomeVC: UIViewController {
         logoImageView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.leading.equalToSuperview().inset(16)
-            make.width.equalTo(96)
             make.height.equalTo(20)
         }
         
@@ -168,8 +164,9 @@ extension HomeVC: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ContentTVC.identifier) as? ContentTVC else {return UITableViewCell()}
         
         cell.contentTitleLabel.text = contentTitleList[indexPath.row]
-        cell.contentImageView.backgroundColor = .green
-        cell.contentChannelImageView.backgroundColor = .purple
+        cell.contentImageView.image = UIImage(named: "congi")
+        cell.contentChannelImageView.image = UIImage(named: "wesoptProfile")
+        cell.contentMoreButton.setImage(UIImage(named: "moreMenuIcon"), for: .normal)
         return cell
     }
 }

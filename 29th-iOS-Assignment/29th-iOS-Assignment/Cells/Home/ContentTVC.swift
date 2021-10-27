@@ -32,9 +32,7 @@ class ContentTVC: UITableViewCell {
     func configUI() {
         contentTitleLabel.numberOfLines = 2
         contentTitleLabel.text = "4차 iOS 세미나: 라이브러리 사용과 함께 치킨 먹는 방법"
-        
         contentSubLabel.text = "WE SOPT · 조회수 100만회 · 3주전"
-        contentMoreButton.backgroundColor = .black
     }
     
     func setupLayout(){

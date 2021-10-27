@@ -15,7 +15,7 @@ class HomeChannelCVC: UICollectionViewCell {
     
     func setData(channelName: String, channelImage: String) {
         channelNameLabel.text = channelName
-//        channelImageView.image = UIImage(named: channelImage)
-        channelImageView.backgroundColor = .yellow
+        channelImageView.image = UIImage(named: channelImage)
+//        channelImageView.backgroundColor = .yellow
     }
 }
