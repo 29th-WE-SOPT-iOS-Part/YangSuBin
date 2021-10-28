@@ -42,10 +42,8 @@ class HomeVC: UIViewController {
         
         channelCollectionView.delegate = self
         channelCollectionView.dataSource = self
-        
         categoriesCollectionView.delegate = self
         categoriesCollectionView.dataSource = self
-        
         contentTableView.delegate = self
         contentTableView.dataSource = self
 
@@ -140,6 +138,7 @@ extension HomeVC {
         }
     }
     
+    /// categoriesCollectionView에 들어갈 label의 크기를 categoryLabel이라는 임의의 label을 만들어서 계산 후 return
     func setupLabelSize(index: Int) -> CGSize {
         let categoryLabel = UILabel()
         categoryLabel.text = categorieList[index]
@@ -156,6 +155,7 @@ extension HomeVC: UICollectionViewDelegate {
 
 // MARK: - UICollectionViewDelegateFlowLayout
 extension HomeVC: UICollectionViewDelegateFlowLayout {
+    /// 셀 크기 지정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         switch collectionView {
@@ -164,13 +164,14 @@ extension HomeVC: UICollectionViewDelegateFlowLayout {
             
         case categoriesCollectionView:
             let size = setupLabelSize(index: indexPath.row)
-            return CGSize(width: size.width + 20, height: size.height + 10)
+            return CGSize(width: size.width + 20, height: 30)
             
         default:
             return CGSize(width: 72, height: 104)
         }
     }
     
+    /// collectionView의 padding 값 지정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
         switch collectionView {
@@ -185,10 +186,12 @@ extension HomeVC: UICollectionViewDelegateFlowLayout {
         }
     }
     
+    /// cell 상하 간격
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
     
+    /// cell 좌우 간격
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         
         switch collectionView {
@@ -206,7 +209,9 @@ extension HomeVC: UICollectionViewDelegateFlowLayout {
 
 // MARK: - UICollectionViewDataSource
 extension HomeVC: UICollectionViewDataSource {
+    /// cell 개수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         switch collectionView {
         case channelCollectionView :
             return channelNameList.count
@@ -219,7 +224,9 @@ extension HomeVC: UICollectionViewDataSource {
         }
     }
     
+    /// cell 생성
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         switch collectionView {
         case channelCollectionView:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeChannelCVC.identifier, for: indexPath) as? HomeChannelCVC else {return UICollectionViewCell()}
@@ -239,6 +246,7 @@ extension HomeVC: UICollectionViewDataSource {
 
 // MARK: - UITableViewDelegate
 extension HomeVC: UITableViewDelegate {
+    /// tableView cell 높이
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 306
     }
@@ -246,10 +254,12 @@ extension HomeVC: UITableViewDelegate {
 
 // MARK: - UITableViewDataSource
 extension HomeVC: UITableViewDataSource {
+    /// cell 개수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return contentTitleList.count
     }
     
+    /// cell 생성
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ContentTVC.identifier) as? ContentTVC else {return UITableViewCell()}
         

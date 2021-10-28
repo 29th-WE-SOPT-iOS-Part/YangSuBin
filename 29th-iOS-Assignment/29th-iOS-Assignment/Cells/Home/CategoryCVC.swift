@@ -12,13 +12,16 @@ import SnapKit
 class CategoryCVC: UICollectionViewCell {
     static let identifier = "CategoryCVC"
     
+    // MARK: - Properties
     let categoryLabel = UILabel()
     
+    // MARK: - Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
         
     }
     
+    /// 코드베이스로 cell을 생성할때 필요한 함수 (인터페이스 빌더에서는 자동으로 초기화하기 때문에 init 필요 X)
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -35,6 +38,7 @@ class CategoryCVC: UICollectionViewCell {
         
     }
     
+    // MARK: - Custom Method
     func configUI() {
         layer.cornerRadius = 14
         layer.borderWidth = 1
