@@ -11,11 +11,17 @@ import SnapKit
 
 class HomeVC: UIViewController {
     // MARK: - Dummy Data
-    var channelNameList = ["iOS", "android", "web", "design", "plan", "catch", "me", "hello"]
-    var channelImageList = ["ggamju1", "ggamju2", "ggamju3", "ggamju4", "ggamju5", "ggamju6", "ggamju7", "ggamju8"]
-    var contentTitleList = ["1주차 iOS: 치킨 시켜먹는법", "2주차 iOS: 떡볶이는 지상 최고의 음식입니다", "3주차 iOS: 떡볶이 사주세요 매운거로 사주세요",
-                            "4주차 iOS: 오늘은 엽떡을 먹을까 응떡을 먹을까 신전을 먹을까?", "5주차 iOS: 육회스터디 서치바 정리해서 올려야되는데",
+    var channelNameList = ["iOS", "android", "web", "design",
+                           "plan", "catch", "me", "hello"]
+    var channelImageList = ["ggamju1", "ggamju2", "ggamju3",
+                            "ggamju4", "ggamju5", "ggamju6",
+                            "ggamju7", "ggamju8"]
+    var contentTitleList = ["1주차 iOS: 치킨 시켜먹는법", "2주차 iOS: 떡볶이는 지상 최고의 음식입니다",
+                            "3주차 iOS: 떡볶이 사주세요 매운거로 사주세요",
+                            "4주차 iOS: 오늘은 엽떡을 먹을까 응떡을 먹을까 신전을 먹을까?",
+                            "5주차 iOS: 육회스터디 서치바 정리해서 올려야되는데",
                             "6주차 iOS: 자료구조 시험 망하는 법"]
+    var categorieList = ["전체", "오늘", "이어서 시청하기", "시청하지 않음", "실시간", "게시물"]
     
     // MARK: - Properties
     @IBOutlet weak var topView: UIView!
@@ -25,9 +31,10 @@ class HomeVC: UIViewController {
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var profileButton: UIButton!
     
+    @IBOutlet weak var dividedLine: UIView!
     @IBOutlet weak var channelCollectionView: UICollectionView!
+    @IBOutlet weak var categoriesCollectionView: UICollectionView!
     @IBOutlet weak var contentTableView: UITableView!
-    
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -36,18 +43,20 @@ class HomeVC: UIViewController {
         channelCollectionView.delegate = self
         channelCollectionView.dataSource = self
         
+        categoriesCollectionView.delegate = self
+        categoriesCollectionView.dataSource = self
+        
         contentTableView.delegate = self
         contentTableView.dataSource = self
 
         configUI()
         setupLayout()
         registerXib()
+        registerNib()
     }
 
     // MARK: - Custom Method
     func configUI() {
-        view.backgroundColor = .white
-        
         logoImageView.image = UIImage(named: "premiumLogo")
         windowButton.setImage(UIImage(named: "windowSharingIcon"), for: .normal)
         notiButton.setImage(UIImage(named: "notificationIcon"), for: .normal)
@@ -55,11 +64,16 @@ class HomeVC: UIViewController {
         profileButton.setImage(UIImage(named: "wesoptProfile"), for: .normal)
         
         channelCollectionView.showsHorizontalScrollIndicator = false
+        categoriesCollectionView.showsHorizontalScrollIndicator = false
     }
     
-    func registerXib(){
+    func registerXib() {
         let xibName = UINib(nibName: ContentTVC.identifier, bundle: nil)
         contentTableView.register(xibName, forCellReuseIdentifier: ContentTVC.identifier)
+    }
+    
+    func registerNib() {
+        categoriesCollectionView.register(CategoryCVC.self, forCellWithReuseIdentifier: CategoryCVC.identifier)
     }
 }
 
@@ -108,10 +122,30 @@ extension HomeVC {
             make.height.equalTo(104)
         }
         
-        contentTableView.snp.makeConstraints { make in
+        dividedLine.snp.makeConstraints { make in
             make.top.equalTo(channelCollectionView.snp.bottom)
+            make.leading.trailing.equalToSuperview()
+            make.height.equalTo(1)
+        }
+        
+        categoriesCollectionView.snp.makeConstraints { make in
+            make.top.equalTo(channelCollectionView.snp.bottom)
+            make.leading.trailing.equalToSuperview()
+            make.height.equalTo(48)
+        }
+        
+        contentTableView.snp.makeConstraints { make in
+            make.top.equalTo(categoriesCollectionView.snp.bottom)
             make.leading.trailing.bottom.equalToSuperview()
         }
+    }
+    
+    func setupLabelSize(index: Int) -> CGSize {
+        let categoryLabel = UILabel()
+        categoryLabel.text = categorieList[index]
+        categoryLabel.sizeToFit()
+
+        return categoryLabel.bounds.size
     }
 }
 
@@ -123,11 +157,32 @@ extension HomeVC: UICollectionViewDelegate {
 // MARK: - UICollectionViewDelegateFlowLayout
 extension HomeVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 72, height: 104)
+        
+        switch collectionView {
+        case channelCollectionView :
+            return CGSize(width: 72, height: 104)
+            
+        case categoriesCollectionView:
+            let size = setupLabelSize(index: indexPath.row)
+            return CGSize(width: size.width + 20, height: size.height + 10)
+            
+        default:
+            return CGSize(width: 72, height: 104)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets.zero
+        
+        switch collectionView {
+        case channelCollectionView:
+            return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+            
+        case categoriesCollectionView:
+            return UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
+            
+        default:
+            return .zero
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -135,22 +190,50 @@ extension HomeVC: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        
+        switch collectionView {
+        case channelCollectionView:
+            return 0
+            
+        case categoriesCollectionView:
+            return 9
+            
+        default:
+            return .zero
+        }
     }
 }
 
 // MARK: - UICollectionViewDataSource
 extension HomeVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return channelNameList.count
+        switch collectionView {
+        case channelCollectionView :
+            return channelNameList.count
+            
+        case categoriesCollectionView:
+            return categorieList.count
+        
+        default:
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeChannelCVC.identifier, for: indexPath) as? HomeChannelCVC else {return UICollectionViewCell()}
-        
-        cell.setData(channelName: channelNameList[indexPath.row], channelImage: channelImageList[indexPath.row])
-        
-        return cell
+        switch collectionView {
+        case channelCollectionView:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeChannelCVC.identifier, for: indexPath) as? HomeChannelCVC else {return UICollectionViewCell()}
+            cell.setData(channelName: channelNameList[indexPath.row], channelImage: channelImageList[indexPath.row])
+            return cell
+            
+        case categoriesCollectionView:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCVC.identifier, for: indexPath) as? CategoryCVC else {return UICollectionViewCell()}
+            cell.categoryLabel.text = categorieList[indexPath.row]
+            return cell
+            
+        default:
+            return UICollectionViewCell()
+        }
     }
 }
 
@@ -174,6 +257,7 @@ extension HomeVC: UITableViewDataSource {
         cell.contentImageView.image = UIImage(named: "congi")
         cell.contentChannelImageView.image = UIImage(named: "wesoptProfile")
         cell.contentMoreButton.setImage(UIImage(named: "moreMenuIcon"), for: .normal)
+        
         return cell
     }
 }
