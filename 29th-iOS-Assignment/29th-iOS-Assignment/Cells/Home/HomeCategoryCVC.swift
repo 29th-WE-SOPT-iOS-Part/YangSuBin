@@ -1,5 +1,5 @@
 //
-//  CategoryCVC.swift
+//  HomeCategoryCVC.swift
 //  29th-iOS-Assignment
 //
 //  Created by 양수빈 on 2021/10/28.
@@ -9,8 +9,8 @@ import UIKit
 
 import SnapKit
 
-class CategoryCVC: UICollectionViewCell {
-    static let identifier = "CategoryCVC"
+class HomeCategoryCVC: UICollectionViewCell {
+    static let identifier = "HomeCategoryCVC"
     
     // MARK: - Properties
     let categoryLabel = UILabel()

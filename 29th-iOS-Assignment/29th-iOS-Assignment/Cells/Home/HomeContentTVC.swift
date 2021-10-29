@@ -1,5 +1,5 @@
 //
-//  ContentTVC.swift
+//  HomeContentTVC.swift
 //  29th-iOS-Assignment
 //
 //  Created by 양수빈 on 2021/10/28.
@@ -7,8 +7,8 @@
 
 import UIKit
 
-class ContentTVC: UITableViewCell {
-    static let identifier = "ContentTVC"
+class HomeContentTVC: UITableViewCell {
+    static let identifier = "HomeContentTVC"
 
     // MARK: - @IBOutlet
     @IBOutlet weak var contentImageView: UIImageView!

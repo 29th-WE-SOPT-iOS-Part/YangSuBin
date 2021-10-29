@@ -67,12 +67,12 @@ class HomeVC: UIViewController {
     }
     
     func registerXib() {
-        let xibName = UINib(nibName: ContentTVC.identifier, bundle: nil)
-        contentTableView.register(xibName, forCellReuseIdentifier: ContentTVC.identifier)
+        let xibName = UINib(nibName: HomeContentTVC.identifier, bundle: nil)
+        contentTableView.register(xibName, forCellReuseIdentifier: HomeContentTVC.identifier)
     }
     
     func registerNib() {
-        categoriesCollectionView.register(CategoryCVC.self, forCellWithReuseIdentifier: CategoryCVC.identifier)
+        categoriesCollectionView.register(HomeCategoryCVC.self, forCellWithReuseIdentifier: HomeCategoryCVC.identifier)
     }
 }
 
@@ -235,7 +235,7 @@ extension HomeVC: UICollectionViewDataSource {
             return cell
             
         case categoriesCollectionView:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCVC.identifier, for: indexPath) as? CategoryCVC else {return UICollectionViewCell()}
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCategoryCVC.identifier, for: indexPath) as? HomeCategoryCVC else {return UICollectionViewCell()}
             cell.categoryLabel.text = categorieList[indexPath.row]
             return cell
             
@@ -262,7 +262,7 @@ extension HomeVC: UITableViewDataSource {
     
     /// cell 생성
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ContentTVC.identifier) as? ContentTVC else {return UITableViewCell()}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeContentTVC.identifier) as? HomeContentTVC else {return UITableViewCell()}
         
         cell.contentTitleLabel.text = contentTitleList[indexPath.row]
         cell.contentImageView.image = UIImage(named: "\(contentImageList[indexPath.row])")
