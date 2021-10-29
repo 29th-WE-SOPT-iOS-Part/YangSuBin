@@ -21,7 +21,7 @@ class CategoryCVC: UICollectionViewCell {
         
     }
     
-    /// 코드베이스로 cell을 생성할때 필요한 함수 (인터페이스 빌더에서는 자동으로 초기화하기 때문에 init 필요 X)
+    /// 코드베이스로 cell을 생성할때 필요한 초기화 함수 (인터페이스 빌더에서는 자동으로 초기화하기 때문에 init 필요 X)
     override init(frame: CGRect) {
         super.init(frame: frame)
         

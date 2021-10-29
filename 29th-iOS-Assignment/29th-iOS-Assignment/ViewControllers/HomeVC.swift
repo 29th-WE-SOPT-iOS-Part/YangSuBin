@@ -21,6 +21,7 @@ class HomeVC: UIViewController {
                             "4주차 iOS: 오늘은 엽떡을 먹을까 응떡을 먹을까 신전을 먹을까?",
                             "5주차 iOS: 육회스터디 서치바 정리해서 올려야되는데",
                             "6주차 iOS: 자료구조 시험 망하는 법"]
+    var contentImageList = ["congi1", "congi2", "congi3", "congi4", "congi5", "congi6"]
     var categorieList = ["전체", "오늘", "이어서 시청하기", "시청하지 않음", "실시간", "게시물"]
     
     // MARK: - Properties
@@ -264,7 +265,7 @@ extension HomeVC: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ContentTVC.identifier) as? ContentTVC else {return UITableViewCell()}
         
         cell.contentTitleLabel.text = contentTitleList[indexPath.row]
-        cell.contentImageView.image = UIImage(named: "congi")
+        cell.contentImageView.image = UIImage(named: "\(contentImageList[indexPath.row])")
         cell.contentChannelImageView.image = UIImage(named: "wesoptProfile")
         cell.contentMoreButton.setImage(UIImage(named: "moreMenuIcon"), for: .normal)
         
