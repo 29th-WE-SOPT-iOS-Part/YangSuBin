@@ -14,6 +14,11 @@
 		2BBF45C12716893B00686134 /* AddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF45C02716893B00686134 /* AddVC.swift */; };
 		2BBF45C32716894900686134 /* SubscribeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF45C22716894900686134 /* SubscribeVC.swift */; };
 		2BBF45C5271689B100686134 /* LockerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF45C4271689B100686134 /* LockerVC.swift */; };
+		2BC3B1AE2729C24300240249 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC3B1AD2729C24300240249 /* UIView+Extension.swift */; };
+		2BC3B1B22729CA7700240249 /* HomeChannelCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC3B1B12729CA7700240249 /* HomeChannelCVC.swift */; };
+		2BC3B1B52729D0C700240249 /* HomeContentTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC3B1B32729D0C700240249 /* HomeContentTVC.swift */; };
+		2BC3B1B62729D0C700240249 /* HomeContentTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BC3B1B42729D0C700240249 /* HomeContentTVC.xib */; };
+		2BDB1136272AE48900C61B62 /* HomeCategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDB1135272AE48900C61B62 /* HomeCategoryCVC.swift */; };
 		2BE4D6E62715F0DD00436945 /* UIVIewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE4D6E52715F0DD00436945 /* UIVIewController+Extension.swift */; };
 		2BF508CB270B0A50004EF83D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF508CA270B0A50004EF83D /* AppDelegate.swift */; };
 		2BF508CD270B0A50004EF83D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF508CC270B0A50004EF83D /* SceneDelegate.swift */; };
@@ -36,6 +41,11 @@
 		2BBF45C02716893B00686134 /* AddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVC.swift; sourceTree = "<group>"; };
 		2BBF45C22716894900686134 /* SubscribeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeVC.swift; sourceTree = "<group>"; };
 		2BBF45C4271689B100686134 /* LockerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockerVC.swift; sourceTree = "<group>"; };
+		2BC3B1AD2729C24300240249 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		2BC3B1B12729CA7700240249 /* HomeChannelCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeChannelCVC.swift; sourceTree = "<group>"; };
+		2BC3B1B32729D0C700240249 /* HomeContentTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentTVC.swift; sourceTree = "<group>"; };
+		2BC3B1B42729D0C700240249 /* HomeContentTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeContentTVC.xib; sourceTree = "<group>"; };
+		2BDB1135272AE48900C61B62 /* HomeCategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCategoryCVC.swift; sourceTree = "<group>"; };
 		2BE4D6E52715F0DD00436945 /* UIVIewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIewController+Extension.swift"; sourceTree = "<group>"; };
 		2BF508C7270B0A50004EF83D /* 29th-iOS-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "29th-iOS-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BF508CA270B0A50004EF83D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,10 +72,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2BC3B1AF2729C97500240249 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2BC3B1B02729CA4900240249 /* Home */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		2BC3B1B02729CA4900240249 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2BC3B1B12729CA7700240249 /* HomeChannelCVC.swift */,
+				2BC3B1B32729D0C700240249 /* HomeContentTVC.swift */,
+				2BC3B1B42729D0C700240249 /* HomeContentTVC.xib */,
+				2BDB1135272AE48900C61B62 /* HomeCategoryCVC.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		2BE4D6E42715F0BD00436945 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				2BE4D6E52715F0DD00436945 /* UIVIewController+Extension.swift */,
+				2BC3B1AD2729C24300240249 /* UIView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -94,6 +124,7 @@
 				2BE4D6E42715F0BD00436945 /* Extensions */,
 				2BF508E2270B0B3B004EF83D /* Supports */,
 				2BF508E1270B0AE4004EF83D /* ViewControllers */,
+				2BC3B1AF2729C97500240249 /* Cells */,
 				2BF508DE270B0AA2004EF83D /* Storyboards */,
 				2BF508D3270B0A51004EF83D /* Assets.xcassets */,
 				2BF508D8270B0A51004EF83D /* Info.plist */,
@@ -214,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BF508D7270B0A51004EF83D /* LaunchScreen.storyboard in Resources */,
+				2BC3B1B62729D0C700240249 /* HomeContentTVC.xib in Resources */,
 				2BF508D4270B0A51004EF83D /* Assets.xcassets in Resources */,
 				2BF508D2270B0A50004EF83D /* Main.storyboard in Resources */,
 				2BBF45B9271688AD00686134 /* YoutubeMain.storyboard in Resources */,
@@ -270,17 +302,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BF508E4270B0BCB004EF83D /* LoginViewController.swift in Sources */,
+				2BC3B1AE2729C24300240249 /* UIView+Extension.swift in Sources */,
 				2BBF45BD2716891E00686134 /* HomeVC.swift in Sources */,
 				2BBF45C5271689B100686134 /* LockerVC.swift in Sources */,
 				2BBF45BB2716890300686134 /* CustomTBC.swift in Sources */,
 				2BF508CB270B0A50004EF83D /* AppDelegate.swift in Sources */,
 				2BBF45C12716893B00686134 /* AddVC.swift in Sources */,
 				2BE4D6E62715F0DD00436945 /* UIVIewController+Extension.swift in Sources */,
+				2BC3B1B52729D0C700240249 /* HomeContentTVC.swift in Sources */,
 				2BF508E6270B0EE6004EF83D /* SignupViewController.swift in Sources */,
 				2BF508E8270B0F18004EF83D /* SuccessViewController.swift in Sources */,
 				2BBF45BF2716892B00686134 /* ShortsVC.swift in Sources */,
+				2BDB1136272AE48900C61B62 /* HomeCategoryCVC.swift in Sources */,
 				2BF508CD270B0A50004EF83D /* SceneDelegate.swift in Sources */,
 				2BBF45C32716894900686134 /* SubscribeVC.swift in Sources */,
+				2BC3B1B22729CA7700240249 /* HomeChannelCVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

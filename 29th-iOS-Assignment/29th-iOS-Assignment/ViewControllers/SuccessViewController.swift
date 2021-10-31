@@ -31,31 +31,6 @@ class SuccessViewController: UIViewController {
         logoImageView.image = UIImage(named: "Google")
     }
     
-//    func setupLayout() {
-//        logoImageView.snp.makeConstraints { make in
-//            make.top.equalToSuperview().offset(207)
-//            make.centerX.equalToSuperview()
-//            make.width.equalTo(117)
-//            make.height.equalTo(40)
-//        }
-//
-//        nameLabel.snp.makeConstraints { make in
-//            make.top.equalTo(logoImageView.snp.bottom).offset(14)
-//            make.centerX.equalToSuperview()
-//        }
-//
-//        okayButton.snp.makeConstraints { make in
-//            make.top.equalTo(nameLabel.snp.bottom).offset(53)
-//            make.leading.trailing.equalToSuperview().inset(22)
-//            make.height.equalTo(50)
-//        }
-//
-//        anotherAccountButton.snp.makeConstraints { make in
-//            make.top.equalTo(okayButton.snp.bottom).offset(23)
-//            make.centerX.equalToSuperview()
-//        }
-//    }
-    
     /// 받아온 이름 넣는 함수
     func setNameLabel() {
         if let name = message {

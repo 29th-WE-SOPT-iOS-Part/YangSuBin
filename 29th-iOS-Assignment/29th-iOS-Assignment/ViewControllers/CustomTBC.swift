@@ -34,6 +34,7 @@ class CustomTBC: UITabBarController {
         
         /// 탭바 아이콘 색상
         tabBar.tintColor = .black
+        tabBar.backgroundColor = .white
         
         /// 탭바 아이템별 기본 아이콘
         homeVC.tabBarItem.image = UIImage(named: "homeIcon")
