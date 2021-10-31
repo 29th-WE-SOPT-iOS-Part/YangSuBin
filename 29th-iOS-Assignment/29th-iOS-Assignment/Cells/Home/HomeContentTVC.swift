@@ -34,39 +34,37 @@ class HomeContentTVC: UITableViewCell {
     // MARK: - Custom Method
     func configUI() {
         contentTitleLabel.numberOfLines = 2
-        contentTitleLabel.text = "4차 iOS 세미나: 라이브러리 사용과 함께 치킨 먹는 방법"
-        contentSubLabel.text = "WE SOPT · 조회수 100만회 · 3주전"
         contentImageView.contentMode = .scaleToFill
     }
     
     func setupLayout(){
-        contentImageView.snp.makeConstraints { make in
-            make.top.leading.trailing.equalToSuperview()
-            make.height.equalTo(212)
+        contentImageView.snp.makeConstraints {
+            $0.top.leading.trailing.equalToSuperview()
+            $0.height.equalTo(212)
         }
         
-        contentChannelImageView.snp.makeConstraints { make in
-            make.top.equalTo(contentImageView.snp.bottom).offset(12)
-            make.leading.equalToSuperview().offset(12)
-            make.width.height.equalTo(36)
+        contentChannelImageView.snp.makeConstraints {
+            $0.top.equalTo(contentImageView.snp.bottom).offset(12)
+            $0.leading.equalToSuperview().offset(12)
+            $0.width.height.equalTo(36)
         }
         
-        contentTitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(contentImageView.snp.bottom).offset(12)
-            make.leading.equalTo(contentChannelImageView.snp.trailing).offset(12)
-            make.trailing.equalTo(contentMoreButton.snp.leading).offset(-19)
+        contentTitleLabel.snp.makeConstraints {
+            $0.top.equalTo(contentImageView.snp.bottom).offset(12)
+            $0.leading.equalTo(contentChannelImageView.snp.trailing).offset(12)
+            $0.trailing.equalTo(contentMoreButton.snp.leading).offset(-19)
         }
         
-        contentSubLabel.snp.makeConstraints { make in
-            make.top.equalTo(contentTitleLabel.snp.bottom).offset(4)
-            make.leading.equalTo(contentTitleLabel.snp.leading)
-            make.trailing.equalTo(contentTitleLabel.snp.trailing)
+        contentSubLabel.snp.makeConstraints {
+            $0.top.equalTo(contentTitleLabel.snp.bottom).offset(4)
+            $0.leading.equalTo(contentTitleLabel.snp.leading)
+            $0.trailing.equalTo(contentTitleLabel.snp.trailing)
         }
         
-        contentMoreButton.snp.makeConstraints { make in
-            make.top.equalTo(contentImageView.snp.bottom).offset(7)
-            make.trailing.equalToSuperview()
-            make.width.height.equalTo(26)
+        contentMoreButton.snp.makeConstraints { 
+            $0.top.equalTo(contentImageView.snp.bottom).offset(7)
+            $0.trailing.equalToSuperview()
+            $0.width.height.equalTo(26)
         }
     }
 }

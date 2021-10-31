@@ -8,6 +8,7 @@
 import UIKit
 
 import SnapKit
+import Then
 
 class HomeVC: UIViewController {
     // MARK: - Dummy Data
@@ -21,6 +22,8 @@ class HomeVC: UIViewController {
                             "4주차 iOS: 오늘은 엽떡을 먹을까 응떡을 먹을까 신전을 먹을까?",
                             "5주차 iOS: 육회스터디 서치바 정리해서 올려야되는데",
                             "6주차 iOS: 자료구조 시험 망하는 법"]
+    var contentViewList = ["100만", "20만", "100", "2", "22", "50만"]
+    var contentTimeList = ["3주전", "1주전", "1일전", "2시간전", "10분전", "방금전"]
     var contentImageList = ["congi1", "congi2", "congi3", "congi4", "congi5", "congi6"]
     var categorieList = ["전체", "오늘", "이어서 시청하기", "시청하지 않음", "실시간", "게시물"]
     
@@ -40,18 +43,12 @@ class HomeVC: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        channelCollectionView.delegate = self
-        channelCollectionView.dataSource = self
-        categoriesCollectionView.delegate = self
-        categoriesCollectionView.dataSource = self
-        contentTableView.delegate = self
-        contentTableView.dataSource = self
 
         configUI()
         setupLayout()
         registerXib()
         registerNib()
+        setupDelegate()
     }
 
     // MARK: - Custom Method
@@ -74,68 +71,77 @@ class HomeVC: UIViewController {
     func registerNib() {
         categoriesCollectionView.register(HomeCategoryCVC.self, forCellWithReuseIdentifier: HomeCategoryCVC.identifier)
     }
+    
+    func setupDelegate() {
+        channelCollectionView.delegate = self
+        channelCollectionView.dataSource = self
+        categoriesCollectionView.delegate = self
+        categoriesCollectionView.dataSource = self
+        contentTableView.delegate = self
+        contentTableView.dataSource = self
+    }
 }
 
 // MARK: - Layout
 extension HomeVC {
     func setupLayout() {
-        topView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(50)
-            make.leading.trailing.equalToSuperview()
-            make.height.equalTo(60)
+        topView.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(50)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(60)
         }
         
-        logoImageView.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
-            make.leading.equalToSuperview().inset(16)
-            make.height.equalTo(20)
+        logoImageView.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.leading.equalToSuperview().inset(16)
+            $0.height.equalTo(20)
         }
         
-        profileButton.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
-            make.trailing.equalToSuperview().inset(16)
-            make.width.height.equalTo(32)
+        profileButton.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.trailing.equalToSuperview().inset(16)
+            $0.width.height.equalTo(32)
         }
         
-        searchButton.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
-            make.trailing.equalTo(profileButton.snp.leading).offset(-17)
-            make.width.height.equalTo(32)
+        searchButton.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.trailing.equalTo(profileButton.snp.leading).offset(-17)
+            $0.width.height.equalTo(32)
         }
         
-        notiButton.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
-            make.trailing.equalTo(searchButton.snp.leading).offset(-11)
-            make.width.height.equalTo(32)
+        notiButton.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.trailing.equalTo(searchButton.snp.leading).offset(-11)
+            $0.width.height.equalTo(32)
         }
         
-        windowButton.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
-            make.trailing.equalTo(notiButton.snp.leading).offset(-12)
-            make.width.height.equalTo(32)
+        windowButton.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.trailing.equalTo(notiButton.snp.leading).offset(-12)
+            $0.width.height.equalTo(32)
         }
         
-        channelCollectionView.snp.makeConstraints { make in
-            make.top.equalTo(topView.snp.bottom)
-            make.leading.trailing.equalToSuperview()
-            make.height.equalTo(104)
+        channelCollectionView.snp.makeConstraints {
+            $0.top.equalTo(topView.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(104)
         }
         
-        dividedLine.snp.makeConstraints { make in
-            make.top.equalTo(channelCollectionView.snp.bottom)
-            make.leading.trailing.equalToSuperview()
-            make.height.equalTo(1)
+        dividedLine.snp.makeConstraints {
+            $0.top.equalTo(channelCollectionView.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(1)
         }
         
-        categoriesCollectionView.snp.makeConstraints { make in
-            make.top.equalTo(channelCollectionView.snp.bottom)
-            make.leading.trailing.equalToSuperview()
-            make.height.equalTo(48)
+        categoriesCollectionView.snp.makeConstraints {
+            $0.top.equalTo(channelCollectionView.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(48)
         }
         
-        contentTableView.snp.makeConstraints { make in
-            make.top.equalTo(categoriesCollectionView.snp.bottom)
-            make.leading.trailing.bottom.equalToSuperview()
+        contentTableView.snp.makeConstraints {
+            $0.top.equalTo(categoriesCollectionView.snp.bottom)
+            $0.leading.trailing.bottom.equalToSuperview()
         }
     }
     
@@ -265,6 +271,7 @@ extension HomeVC: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeContentTVC.identifier) as? HomeContentTVC else {return UITableViewCell()}
         
         cell.contentTitleLabel.text = contentTitleList[indexPath.row]
+        cell.contentSubLabel.text = "WE SOPT · 조회수 \(contentViewList[indexPath.row])회 · \(contentTimeList[indexPath.row])"
         cell.contentImageView.image = UIImage(named: "\(contentImageList[indexPath.row])")
         cell.contentChannelImageView.image = UIImage(named: "wesoptProfile")
         cell.contentMoreButton.setImage(UIImage(named: "moreMenuIcon"), for: .normal)

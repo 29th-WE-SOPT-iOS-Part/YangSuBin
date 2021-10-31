@@ -52,8 +52,8 @@ class HomeCategoryCVC: UICollectionViewCell {
     func setupLayout() {
         self.addSubview(categoryLabel)
         
-        categoryLabel.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+        categoryLabel.snp.makeConstraints {
+            $0.center.equalToSuperview()
         }
     }
 }
