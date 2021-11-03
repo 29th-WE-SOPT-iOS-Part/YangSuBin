@@ -80,6 +80,14 @@ class HomeVC: UIViewController {
         contentTableView.delegate = self
         contentTableView.dataSource = self
     }
+    
+    @IBAction func touchUpProfileButton(_ sender: Any) {
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        guard let nextVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController else {return}
+        
+        nextVC.modalPresentationStyle = .fullScreen
+        present(nextVC, animated: true, completion: nil)
+    }
 }
 
 // MARK: - Layout
