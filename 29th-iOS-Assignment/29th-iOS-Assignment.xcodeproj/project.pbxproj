@@ -72,6 +72,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B4816B72732E12A003CCE3B /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				2B4816BB2732E271003CCE3B /* APIServices */,
+				2B4816B92732E227003CCE3B /* Xibs */,
+				2BF508DE270B0AA2004EF83D /* Storyboards */,
+				2BF508D3270B0A51004EF83D /* Assets.xcassets */,
+				2BF508D8270B0A51004EF83D /* Info.plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		2B4816B82732E138003CCE3B /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				2BE4D6E42715F0BD00436945 /* Extensions */,
+				2B4816BA2732E258003CCE3B /* Models */,
+				2BC3B1AF2729C97500240249 /* Cells */,
+				2BF508E1270B0AE4004EF83D /* ViewControllers */,
+				2BF508E2270B0B3B004EF83D /* Supports */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		2B4816B92732E227003CCE3B /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				2BC3B1B42729D0C700240249 /* HomeContentTVC.xib */,
+			);
+			path = Xibs;
+			sourceTree = "<group>";
+		};
+		2B4816BA2732E258003CCE3B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2B4816BB2732E271003CCE3B /* APIServices */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = APIServices;
+			sourceTree = "<group>";
+		};
 		2BC3B1AF2729C97500240249 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,7 +131,6 @@
 			children = (
 				2BC3B1B12729CA7700240249 /* HomeChannelCVC.swift */,
 				2BC3B1B32729D0C700240249 /* HomeContentTVC.swift */,
-				2BC3B1B42729D0C700240249 /* HomeContentTVC.xib */,
 				2BDB1135272AE48900C61B62 /* HomeCategoryCVC.swift */,
 			);
 			path = Home;
@@ -121,13 +166,8 @@
 		2BF508C9270B0A50004EF83D /* 29th-iOS-Assignment */ = {
 			isa = PBXGroup;
 			children = (
-				2BE4D6E42715F0BD00436945 /* Extensions */,
-				2BF508E2270B0B3B004EF83D /* Supports */,
-				2BF508E1270B0AE4004EF83D /* ViewControllers */,
-				2BC3B1AF2729C97500240249 /* Cells */,
-				2BF508DE270B0AA2004EF83D /* Storyboards */,
-				2BF508D3270B0A51004EF83D /* Assets.xcassets */,
-				2BF508D8270B0A51004EF83D /* Info.plist */,
+				2B4816B82732E138003CCE3B /* Source */,
+				2B4816B72732E12A003CCE3B /* Resource */,
 			);
 			path = "29th-iOS-Assignment";
 			sourceTree = "<group>";
@@ -468,7 +508,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4QG3GC35LA;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "29th-iOS-Assignment/Info.plist";
+				INFOPLIST_FILE = "29th-iOS-Assignment/Resource/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -497,7 +537,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4QG3GC35LA;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "29th-iOS-Assignment/Info.plist";
+				INFOPLIST_FILE = "29th-iOS-Assignment/Resource/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
