@@ -76,8 +76,11 @@ class LoginViewController: UIViewController {
     
     @IBAction func touchUpToSignup(_ sender: Any) {
         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SignupViewController") else {return}
-        
-        self.navigationController?.pushViewController(nextVC, animated: true)
+        nextVC.modalPresentationStyle = .fullScreen
+        self.present(nextVC, animated: true, completion: nil)
+//        self.dismiss(animated: true) {
+//            self.navigationController?.pushViewController(nextVC, animated: true)
+//        }
     }
     
     // MARK: - @objc
@@ -153,6 +156,7 @@ extension LoginViewController {
 //                    print("------------", response.message)
                     self.showAlert(title: "로그인", message: response.message)
                 }
+                UserDefaults.standard.set(nameTextField.text, forKey: "userName")
             case .requestErr(let msg):
                 print("requestErr \(msg)")
                 
