@@ -8,5 +8,6 @@ target '29th-iOS-Assignment' do
   # Pods for 29th-iOS-Assignment
   pod 'SnapKit', '~> 5.0.0'
   pod 'Then'
+  pod 'Alamofire', '~> 5.4'
 
 end

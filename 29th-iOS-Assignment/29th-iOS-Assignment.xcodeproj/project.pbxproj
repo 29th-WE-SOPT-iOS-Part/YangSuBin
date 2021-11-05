@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B4816BD2732E6AA003CCE3B /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4816BC2732E6AA003CCE3B /* APIConstants.swift */; };
+		2B4816C02732E83E003CCE3B /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4816BF2732E83E003CCE3B /* NetworkResult.swift */; };
+		2B4816C22732E8CD003CCE3B /* LoginDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4816C12732E8CD003CCE3B /* LoginDataModel.swift */; };
+		2B4816C42732E97C003CCE3B /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4816C32732E97C003CCE3B /* LoginService.swift */; };
 		2BBF45B9271688AD00686134 /* YoutubeMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BBF45B8271688AD00686134 /* YoutubeMain.storyboard */; };
 		2BBF45BB2716890300686134 /* CustomTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF45BA2716890300686134 /* CustomTBC.swift */; };
 		2BBF45BD2716891E00686134 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF45BC2716891E00686134 /* HomeVC.swift */; };
@@ -33,6 +37,10 @@
 
 /* Begin PBXFileReference section */
 		1E0BF1C4A0D185311E8AC6CE /* Pods-29th-iOS-Assignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-29th-iOS-Assignment.release.xcconfig"; path = "Target Support Files/Pods-29th-iOS-Assignment/Pods-29th-iOS-Assignment.release.xcconfig"; sourceTree = "<group>"; };
+		2B4816BC2732E6AA003CCE3B /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		2B4816BF2732E83E003CCE3B /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		2B4816C12732E8CD003CCE3B /* LoginDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataModel.swift; sourceTree = "<group>"; };
+		2B4816C32732E97C003CCE3B /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		2B76D5275535EEC539B4BEEF /* Pods_29th_iOS_Assignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_29th_iOS_Assignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BBF45B8271688AD00686134 /* YoutubeMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YoutubeMain.storyboard; sourceTree = "<group>"; };
 		2BBF45BA2716890300686134 /* CustomTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTBC.swift; sourceTree = "<group>"; };
@@ -107,6 +115,7 @@
 		2B4816BA2732E258003CCE3B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2B4816C12732E8CD003CCE3B /* LoginDataModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -114,8 +123,19 @@
 		2B4816BB2732E271003CCE3B /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
+				2B4816BE2732E6C5003CCE3B /* Services */,
+				2B4816BC2732E6AA003CCE3B /* APIConstants.swift */,
+				2B4816BF2732E83E003CCE3B /* NetworkResult.swift */,
 			);
 			path = APIServices;
+			sourceTree = "<group>";
+		};
+		2B4816BE2732E6C5003CCE3B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2B4816C32732E97C003CCE3B /* LoginService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		2BC3B1AF2729C97500240249 /* Cells */ = {
@@ -343,12 +363,16 @@
 			files = (
 				2BF508E4270B0BCB004EF83D /* LoginViewController.swift in Sources */,
 				2BC3B1AE2729C24300240249 /* UIView+Extension.swift in Sources */,
+				2B4816BD2732E6AA003CCE3B /* APIConstants.swift in Sources */,
+				2B4816C02732E83E003CCE3B /* NetworkResult.swift in Sources */,
 				2BBF45BD2716891E00686134 /* HomeVC.swift in Sources */,
 				2BBF45C5271689B100686134 /* LockerVC.swift in Sources */,
 				2BBF45BB2716890300686134 /* CustomTBC.swift in Sources */,
+				2B4816C42732E97C003CCE3B /* LoginService.swift in Sources */,
 				2BF508CB270B0A50004EF83D /* AppDelegate.swift in Sources */,
 				2BBF45C12716893B00686134 /* AddVC.swift in Sources */,
 				2BE4D6E62715F0DD00436945 /* UIVIewController+Extension.swift in Sources */,
+				2B4816C22732E8CD003CCE3B /* LoginDataModel.swift in Sources */,
 				2BC3B1B52729D0C700240249 /* HomeContentTVC.swift in Sources */,
 				2BF508E6270B0EE6004EF83D /* SignupViewController.swift in Sources */,
 				2BF508E8270B0F18004EF83D /* SuccessViewController.swift in Sources */,
