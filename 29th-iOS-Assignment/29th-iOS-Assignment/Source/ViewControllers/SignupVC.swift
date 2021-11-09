@@ -49,10 +49,10 @@ class SignupVC: UIViewController {
     func showAlert(title: String, message: String, okAction: ((UIAlertAction) -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "확인", style: .default, handler: { action in
-            if message == "회원가입 성공" {
+            if message == "회원 가입 성공" {
                 /// 화면전환 수정
-                guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SuccessViewController") as? SuccessVC else {return}
-                
+                guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SuccessVC") as? SuccessVC else {return}
+                print("nextVC: \(nextVC)")
                 nextVC.message = self.nameTextField.text
                 nextVC.modalPresentationStyle = .fullScreen
                 self.present(nextVC, animated: true, completion: nil)
@@ -147,9 +147,6 @@ extension SignupVC {
             case .success(let signupResponse):
                 guard let response = signupResponse as? SignupDataModel else {return}
                 if let userData = response.data {
-                    print("------------", userData)
-                    print("------------", response.data)
-                    print("------------", response.message)
                     self.showAlert(title: "로그인", message: response.message)
                 }
                 UserDefaults.standard.set(nameTextField.text, forKey: "userName")

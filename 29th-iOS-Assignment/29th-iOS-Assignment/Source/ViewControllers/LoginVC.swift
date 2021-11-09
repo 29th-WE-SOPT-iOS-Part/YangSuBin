@@ -52,7 +52,7 @@ class LoginVC: UIViewController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "확인", style: .default, handler: { action in
             if message == "로그인 성공" {
-                guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SuccessViewController") as? SuccessVC else {return}
+                guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SuccessVC") as? SuccessVC else {return}
                 
                 nextVC.message = self.nameTextField.text
                 nextVC.modalPresentationStyle = .fullScreen
@@ -75,10 +75,27 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func touchUpToSignup(_ sender: Any) {
-        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SignupViewController") else {return}
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SignupVC") else {return}
         nextVC.modalPresentationStyle = .fullScreen
         self.present(nextVC, animated: true, completion: nil)
 //        self.dismiss(animated: true) {
+////            self.navigationController?.pushViewController(nextVC, animated: true)
+//            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+//            guard let nextVC = storyboard.instantiateViewController(withIdentifier: "SignupVC") as? SignupVC else {return}
+//            nextVC.modalPresentationStyle = .fullScreen
+//            self.present(nextVC, animated: true, completion: nil)
+//        }
+        
+//        self.dismiss(animated: true) {
+//            print("-------------")
+//            guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SignupViewController") else {return}
+//            print("nextVC: \(nextVC)")
+            
+            /// storyboard 선언하고 화면전환
+//            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+//            guard let nextVC = storyboard.instantiateViewController(withIdentifier: "CustomTabBarController") as? CustomTBC else {return}
+            
+//            print("navigationController: \(self.navigationController)")
 //            self.navigationController?.pushViewController(nextVC, animated: true)
 //        }
     }
@@ -151,9 +168,6 @@ extension LoginVC {
             case .success(let loginResponse):
                 guard let response = loginResponse as? LoginDataModel else {return}
                 if let userData = response.data {
-//                    print("------------", userData)
-//                    print("------------", response.data)
-//                    print("------------", response.message)
                     self.showAlert(title: "로그인", message: response.message)
                 }
                 UserDefaults.standard.set(nameTextField.text, forKey: "userName")
