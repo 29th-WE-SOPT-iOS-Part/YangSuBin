@@ -1,5 +1,5 @@
 //
-//  SignupViewController.swift
+//  SignupVC.swift
 //  29th-iOS-Assignment
 //
 //  Created by 양수빈 on 2021/10/04.
@@ -9,7 +9,7 @@ import UIKit
 
 import SnapKit
 
-class SignupViewController: UIViewController {
+class SignupVC: UIViewController {
 
     // MARK: - Properties
     @IBOutlet weak var logoImageView: UIImageView!
@@ -51,7 +51,7 @@ class SignupViewController: UIViewController {
         let okAction = UIAlertAction(title: "확인", style: .default, handler: { action in
             if message == "회원가입 성공" {
                 /// 화면전환 수정
-                guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SuccessViewController") as? SuccessViewController else {return}
+                guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SuccessViewController") as? SuccessVC else {return}
                 
                 nextVC.message = self.nameTextField.text
                 nextVC.modalPresentationStyle = .fullScreen
@@ -88,7 +88,7 @@ class SignupViewController: UIViewController {
 }
 
 // MARK: - Layout
-extension SignupViewController {
+extension SignupVC {
     func setupLayout() {
         logoImageView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(100)
@@ -140,7 +140,7 @@ extension SignupViewController {
 }
 
 // MARK: - Network
-extension SignupViewController {
+extension SignupVC {
     func requestSignup() {
         SignupService.shared.signup(email: emailTextField.text ?? "", name: nameTextField.text ?? "", password: pwTextField.text ?? "") { [self] responseData in
             switch responseData {

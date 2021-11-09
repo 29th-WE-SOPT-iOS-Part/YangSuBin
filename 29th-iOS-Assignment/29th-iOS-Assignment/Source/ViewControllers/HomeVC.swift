@@ -84,7 +84,7 @@ class HomeVC: UIViewController {
     @IBAction func touchUpProfileButton(_ sender: Any) {
         /// 화면전환 수정
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        guard let nextVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController else {return}
+        guard let nextVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginVC else {return}
         
         nextVC.modalPresentationStyle = .fullScreen
         present(nextVC, animated: true, completion: nil)

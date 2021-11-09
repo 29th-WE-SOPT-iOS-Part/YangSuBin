@@ -1,5 +1,5 @@
 //
-//  SuccessViewController.swift
+//  SuccessVC.swift
 //  29th-iOS-Assignment
 //
 //  Created by 양수빈 on 2021/10/04.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SuccessViewController: UIViewController {
+class SuccessVC: UIViewController {
 
     // MARK: - Properties
     @IBOutlet weak var logoImageView: UIImageView!
@@ -61,7 +61,7 @@ class SuccessViewController: UIViewController {
 }
 
 // MARK: - Layout
-extension SuccessViewController {
+extension SuccessVC {
     func setupLayout() {
         logoImageView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(207)

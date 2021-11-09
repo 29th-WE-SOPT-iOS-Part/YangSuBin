@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  LoginVC.swift
 //  29th-iOS-Assignment
 //
 //  Created by 양수빈 on 2021/10/04.
@@ -9,7 +9,7 @@ import UIKit
 
 import SnapKit
 
-class LoginViewController: UIViewController {
+class LoginVC: UIViewController {
 
     // MARK: - Properties
     @IBOutlet weak var logoImageView: UIImageView!
@@ -52,7 +52,7 @@ class LoginViewController: UIViewController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "확인", style: .default, handler: { action in
             if message == "로그인 성공" {
-                guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SuccessViewController") as? SuccessViewController else {return}
+                guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SuccessViewController") as? SuccessVC else {return}
                 
                 nextVC.message = self.nameTextField.text
                 nextVC.modalPresentationStyle = .fullScreen
@@ -92,7 +92,7 @@ class LoginViewController: UIViewController {
 }
 
 // MARK: - Layout
-extension LoginViewController {
+extension LoginVC {
     func setupLayout() {
         logoImageView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(100)
@@ -144,7 +144,7 @@ extension LoginViewController {
 }
 
 // MARK: - Network
-extension LoginViewController {
+extension LoginVC {
     func requestLogin() {
         LoginService.shared.login(email: emailTextField.text ?? "", password: pwTextField.text ?? "") { [self] responseData in
             switch responseData {
