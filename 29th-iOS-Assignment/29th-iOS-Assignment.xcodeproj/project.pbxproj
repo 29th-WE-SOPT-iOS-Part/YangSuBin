@@ -11,6 +11,8 @@
 		2B4816C02732E83E003CCE3B /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4816BF2732E83E003CCE3B /* NetworkResult.swift */; };
 		2B4816C22732E8CD003CCE3B /* LoginDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4816C12732E8CD003CCE3B /* LoginDataModel.swift */; };
 		2B4816C42732E97C003CCE3B /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4816C32732E97C003CCE3B /* LoginService.swift */; };
+		2B6D2520273AE3820079B36D /* SignupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6D251F273AE3820079B36D /* SignupService.swift */; };
+		2B6D2522273AE4580079B36D /* SignupDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6D2521273AE4580079B36D /* SignupDataModel.swift */; };
 		2BBF45B9271688AD00686134 /* YoutubeMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BBF45B8271688AD00686134 /* YoutubeMain.storyboard */; };
 		2BBF45BB2716890300686134 /* CustomTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF45BA2716890300686134 /* CustomTBC.swift */; };
 		2BBF45BD2716891E00686134 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF45BC2716891E00686134 /* HomeVC.swift */; };
@@ -41,6 +43,8 @@
 		2B4816BF2732E83E003CCE3B /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		2B4816C12732E8CD003CCE3B /* LoginDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataModel.swift; sourceTree = "<group>"; };
 		2B4816C32732E97C003CCE3B /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		2B6D251F273AE3820079B36D /* SignupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupService.swift; sourceTree = "<group>"; };
+		2B6D2521273AE4580079B36D /* SignupDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupDataModel.swift; sourceTree = "<group>"; };
 		2B76D5275535EEC539B4BEEF /* Pods_29th_iOS_Assignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_29th_iOS_Assignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BBF45B8271688AD00686134 /* YoutubeMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YoutubeMain.storyboard; sourceTree = "<group>"; };
 		2BBF45BA2716890300686134 /* CustomTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTBC.swift; sourceTree = "<group>"; };
@@ -116,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				2B4816C12732E8CD003CCE3B /* LoginDataModel.swift */,
+				2B6D2521273AE4580079B36D /* SignupDataModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -134,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				2B4816C32732E97C003CCE3B /* LoginService.swift */,
+				2B6D251F273AE3820079B36D /* SignupService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -363,6 +369,7 @@
 			files = (
 				2BF508E4270B0BCB004EF83D /* LoginViewController.swift in Sources */,
 				2BC3B1AE2729C24300240249 /* UIView+Extension.swift in Sources */,
+				2B6D2520273AE3820079B36D /* SignupService.swift in Sources */,
 				2B4816BD2732E6AA003CCE3B /* APIConstants.swift in Sources */,
 				2B4816C02732E83E003CCE3B /* NetworkResult.swift in Sources */,
 				2BBF45BD2716891E00686134 /* HomeVC.swift in Sources */,
@@ -375,6 +382,7 @@
 				2B4816C22732E8CD003CCE3B /* LoginDataModel.swift in Sources */,
 				2BC3B1B52729D0C700240249 /* HomeContentTVC.swift in Sources */,
 				2BF508E6270B0EE6004EF83D /* SignupViewController.swift in Sources */,
+				2B6D2522273AE4580079B36D /* SignupDataModel.swift in Sources */,
 				2BF508E8270B0F18004EF83D /* SuccessViewController.swift in Sources */,
 				2BBF45BF2716892B00686134 /* ShortsVC.swift in Sources */,
 				2BDB1136272AE48900C61B62 /* HomeCategoryCVC.swift in Sources */,

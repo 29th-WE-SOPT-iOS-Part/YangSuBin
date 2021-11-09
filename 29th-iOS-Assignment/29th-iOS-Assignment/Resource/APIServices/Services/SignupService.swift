@@ -1,22 +1,23 @@
 //
-//  LoginService.swift
+//  SignupService.swift
 //  29th-iOS-Assignment
 //
-//  Created by 양수빈 on 2021/11/04.
+//  Created by 양수빈 on 2021/11/10.
 //
 
 import Foundation
 
 import Alamofire
 
-struct LoginService {
-    static let shared = LoginService()
+struct SignupService {
+    static let shared = SignupService()
     
-    func login(email: String,
-               password: String,
-               completion: @escaping (NetworkResult<Any>) -> (Void)) {
+    func signup(email: String,
+                name: String,
+                password: String,
+                completion: @escaping (NetworkResult<Any>) -> (Void)) {
         
-        let url = APIConstants.loginURL
+        let url = APIConstants.signUpURL
         
         let header : HTTPHeaders = [
             "Content-Type" : "application/json"
@@ -24,6 +25,7 @@ struct LoginService {
         
         let body : Parameters = [
             "email" : email,
+            "name" : name,
             "password" : password
         ]
         
@@ -39,7 +41,7 @@ struct LoginService {
                 guard let statusCode = dataResponse.response?.statusCode else {return}
                 guard let value = dataResponse.value else {return}
                 
-                let networkResult = self.judgeLoginStatus(by: statusCode, value)
+                let networkResult = self.judgeSignupStatus(by: statusCode, value)
                 completion(networkResult)
             case .failure(let err):
                 print(err)
@@ -48,26 +50,26 @@ struct LoginService {
         }
     }
     
-    private func judgeLoginStatus (by statuscode: Int, _ data: Data) -> NetworkResult<Any> {
+    private func judgeSignupStatus (by statuscode: Int, _ data: Data) -> NetworkResult<Any> {
         switch statuscode {
-        case 200: return isValidLoginData(data: data)
+        case 200: return isValidSignupData(data: data)
         case 400:
 //            return .pathErr
-            return isInvalidLoginData(data: data)
+            return isInvalidSignupData(data: data)
         case 500: return .serverErr
         default: return .networkFail
         }
     }
     
-    private func isValidLoginData(data: Data) -> NetworkResult<Any> {
+    private func isValidSignupData(data: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
-        guard let decodedData = try? decoder.decode(LoginDataModel.self, from: data) else {return .networkFail}
+        guard let decodedData = try? decoder.decode(SignupDataModel.self, from: data) else {return .networkFail}
         return .success(decodedData)
     }
     
-    private func isInvalidLoginData(data: Data) -> NetworkResult<Any> {
+    private func isInvalidSignupData(data: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
-        guard let decodedData = try? decoder.decode(LoginDataModel.self, from: data) else {return .networkFail}
+        guard let decodedData = try? decoder.decode(SignupDataModel.self, from: data) else {return .networkFail}
         return .pathErr(decodedData)
     }
 }

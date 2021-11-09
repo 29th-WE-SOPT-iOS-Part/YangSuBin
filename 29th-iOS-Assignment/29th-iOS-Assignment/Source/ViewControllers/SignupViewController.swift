@@ -46,13 +46,30 @@ class SignupViewController: UIViewController {
         showPwButton.addTarget(self, action: #selector(showPwButtonClicked(button:)), for: .touchUpInside)
     }
     
+    func showAlert(title: String, message: String, okAction: ((UIAlertAction) -> Void)? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인", style: .default, handler: { action in
+            if message == "회원가입 성공" {
+                /// 화면전환 수정
+                guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SuccessViewController") as? SuccessViewController else {return}
+                
+                nextVC.message = self.nameTextField.text
+                nextVC.modalPresentationStyle = .fullScreen
+                self.present(nextVC, animated: true, completion: nil)
+            }
+        })
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+    
     // MARK: - @IBAction
     @IBAction func touchUpToSuccess(_ sender: Any) {
-        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SuccessViewController") as? SuccessViewController else {return}
-        
-        nextVC.message = nameTextField.text
-        nextVC.modalPresentationStyle = .fullScreen
-        self.present(nextVC, animated: true, completion: nil)
+//        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SuccessViewController") as? SuccessViewController else {return}
+//
+//        nextVC.message = nameTextField.text
+//        nextVC.modalPresentationStyle = .fullScreen
+//        self.present(nextVC, animated: true, completion: nil)
+        requestSignup()
     }
     
     // MARK: - @objc
@@ -118,6 +135,37 @@ extension SignupViewController {
             make.top.equalTo(showPwButton.snp.bottom).offset(31)
             make.leading.trailing.equalToSuperview().inset(22)
             make.height.equalTo(50)
+        }
+    }
+}
+
+// MARK: - Network
+extension SignupViewController {
+    func requestSignup() {
+        SignupService.shared.signup(email: emailTextField.text ?? "", name: nameTextField.text ?? "", password: pwTextField.text ?? "") { [self] responseData in
+            switch responseData {
+            case .success(let signupResponse):
+                guard let response = signupResponse as? SignupDataModel else {return}
+                if let userData = response.data {
+                    print("------------", userData)
+                    print("------------", response.data)
+                    print("------------", response.message)
+                    self.showAlert(title: "로그인", message: response.message)
+                }
+                UserDefaults.standard.set(nameTextField.text, forKey: "userName")
+            case .requestErr(let msg):
+                print("requestErr \(msg)")
+                
+            case .pathErr(let loginResponse):
+                guard let response = loginResponse as? SignupDataModel else {return}
+                showAlert(title: "회원가입", message: response.message, okAction: nil)
+                print("pathErr")
+                
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
         }
     }
 }
