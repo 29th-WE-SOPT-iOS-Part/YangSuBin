@@ -82,12 +82,17 @@ class HomeVC: UIViewController {
     }
     
     @IBAction func touchUpProfileButton(_ sender: Any) {
+        print("profile button clicked")
         /// 화면전환 수정
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        guard let nextVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC else {return}
+//        guard let nextVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC else {return}
+        guard let navi = storyboard.instantiateViewController(withIdentifier: "MainNavi") as? UINavigationController else {return}
         
-        nextVC.modalPresentationStyle = .fullScreen
-        present(nextVC, animated: true, completion: nil)
+        navi.modalPresentationStyle = .fullScreen
+        present(navi, animated: true, completion: nil)
+        
+//        nextVC.modalPresentationStyle = .fullScreen
+//        present(nextVC, animated: true, completion: nil)
     }
 }
 

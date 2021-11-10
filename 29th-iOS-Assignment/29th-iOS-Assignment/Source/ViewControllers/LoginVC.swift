@@ -76,8 +76,11 @@ class LoginVC: UIViewController {
     
     @IBAction func touchUpToSignup(_ sender: Any) {
         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SignupVC") else {return}
-        nextVC.modalPresentationStyle = .fullScreen
-        self.present(nextVC, animated: true, completion: nil)
+        
+        navigationController?.pushViewController(nextVC, animated: true)
+//        nextVC.modalPresentationStyle = .fullScreen
+//        self.present(nextVC, animated: true, completion: nil)
+        
 //        self.dismiss(animated: true) {
 ////            self.navigationController?.pushViewController(nextVC, animated: true)
 //            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
@@ -91,11 +94,10 @@ class LoginVC: UIViewController {
 //            guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SignupViewController") else {return}
 //            print("nextVC: \(nextVC)")
             
-            /// storyboard 선언하고 화면전환
+//            /// storyboard 선언하고 화면전환
 //            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
 //            guard let nextVC = storyboard.instantiateViewController(withIdentifier: "CustomTabBarController") as? CustomTBC else {return}
-            
-//            print("navigationController: \(self.navigationController)")
+//
 //            self.navigationController?.pushViewController(nextVC, animated: true)
 //        }
     }
