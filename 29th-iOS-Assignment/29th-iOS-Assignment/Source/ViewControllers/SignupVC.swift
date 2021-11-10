@@ -52,7 +52,6 @@ class SignupVC: UIViewController {
             if message == "회원 가입 성공" {
                 /// 화면전환 수정
                 guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SuccessVC") as? SuccessVC else {return}
-                print("nextVC: \(nextVC)")
                 nextVC.message = self.nameTextField.text
                 nextVC.modalPresentationStyle = .fullScreen
                 self.present(nextVC, animated: true, completion: nil)
@@ -64,11 +63,6 @@ class SignupVC: UIViewController {
     
     // MARK: - @IBAction
     @IBAction func touchUpToSuccess(_ sender: Any) {
-//        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SuccessViewController") as? SuccessViewController else {return}
-//
-//        nextVC.message = nameTextField.text
-//        nextVC.modalPresentationStyle = .fullScreen
-//        self.present(nextVC, animated: true, completion: nil)
         requestSignup()
     }
     
