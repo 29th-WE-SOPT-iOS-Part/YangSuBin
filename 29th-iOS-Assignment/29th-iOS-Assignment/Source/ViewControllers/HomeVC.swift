@@ -82,8 +82,8 @@ class HomeVC: UIViewController {
     }
     
     @IBAction func touchUpProfileButton(_ sender: Any) {
-        print("profile button clicked")
-        /// 화면전환 수정
+        /// present 화면 전환
+        /// YoutubeMain 스토리보드의 HomeVC -> Main 스토리보드의 navigationController
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         guard let navi = storyboard.instantiateViewController(withIdentifier: "MainNavi") as? UINavigationController else {return}
         

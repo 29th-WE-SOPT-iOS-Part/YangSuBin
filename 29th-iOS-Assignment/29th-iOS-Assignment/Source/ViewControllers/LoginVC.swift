@@ -51,7 +51,10 @@ class LoginVC: UIViewController {
     func showAlert(title: String, message: String, okAction: ((UIAlertAction) -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "확인", style: .default, handler: { action in
+            /// 서버에서 받은 message가 "로그인 성공"일 때만 화면 전환
             if message == "로그인 성공" {
+                /// present 화면 전환
+                /// Main 스토리보드의 LoginVC -> Main 스토리보드의 SuccessVC
                 guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SuccessVC") as? SuccessVC else {return}
                 
                 nextVC.message = self.nameTextField.text
@@ -66,17 +69,12 @@ class LoginVC: UIViewController {
     // MARK: - @IBAction
     @IBAction func touchUpToSuccess(_ sender: Any) {
         requestLogin()
-        
-//        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SuccessViewController") as? SuccessViewController else {return}
-//
-//        nextVC.message = nameTextField.text
-//        nextVC.modalPresentationStyle = .fullScreen
-//        self.present(nextVC, animated: true, completion: nil)
     }
     
     @IBAction func touchUpToSignup(_ sender: Any) {
+        /// push 화면 전환
+        /// Main 스토리보드의 LoginVC -> Main 스토리보드의 SignupVC
         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SignupVC") else {return}
-        
         navigationController?.pushViewController(nextVC, animated: true)
     }
     
