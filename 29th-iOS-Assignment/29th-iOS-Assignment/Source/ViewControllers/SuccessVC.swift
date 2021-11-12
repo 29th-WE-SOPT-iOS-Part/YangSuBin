@@ -33,9 +33,8 @@ class SuccessVC: UIViewController {
     
     /// 받아온 이름 넣는 함수
     func setNameLabel() {
-        if let name = message {
-            let userName = UserDefaults.standard.string(forKey: "userName")!
-            nameLabel.text = "\(userName)님\n환영합니다!"
+        if let name = UserDefaults.standard.string(forKey: UserDefaults.Keys.userName) {
+            nameLabel.text = "\(name)님\n환영합니다!"
             nameLabel.sizeToFit()
         }
     }

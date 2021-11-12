@@ -46,22 +46,22 @@ class SignupVC: UIViewController {
         showPwButton.addTarget(self, action: #selector(showPwButtonClicked(button:)), for: .touchUpInside)
     }
     
-    func showAlert(title: String, message: String, okAction: ((UIAlertAction) -> Void)? = nil) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "확인", style: .default, handler: { action in
-            /// 서버에서 받은 message가 "회원 가입 성공"일 때만 화면 전환
-            if message == "회원 가입 성공" {
-                /// present 화면 전환
-                /// Main 스토리보드의 SignupVC -> Main 스토리보드의 SuccessVC
-                guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SuccessVC") as? SuccessVC else {return}
-                nextVC.message = self.nameTextField.text
-                nextVC.modalPresentationStyle = .fullScreen
-                self.present(nextVC, animated: true, completion: nil)
-            }
-        })
-        alert.addAction(okAction)
-        present(alert, animated: true)
-    }
+//    func showAlert(title: String, message: String, okAction: ((UIAlertAction) -> Void)? = nil) {
+//        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+//        let okAction = UIAlertAction(title: "확인", style: .default, handler: { action in
+//            /// 서버에서 받은 message가 "회원 가입 성공"일 때만 화면 전환
+//            if message == "회원 가입 성공" {
+//                /// present 화면 전환
+//                /// Main 스토리보드의 SignupVC -> Main 스토리보드의 SuccessVC
+//                guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SuccessVC") as? SuccessVC else {return}
+//
+//                nextVC.modalPresentationStyle = .fullScreen
+//                self.present(nextVC, animated: true, completion: nil)
+//            }
+//        })
+//        alert.addAction(okAction)
+//        present(alert, animated: true)
+//    }
     
     // MARK: - @IBAction
     @IBAction func touchUpToSuccess(_ sender: Any) {
@@ -142,16 +142,16 @@ extension SignupVC {
             switch responseData {
             case .success(let signupResponse):
                 guard let response = signupResponse as? SignupDataModel else {return}
-                if let userData = response.data {
+                if response.data != nil {
                     self.showAlert(title: "회원가입", message: response.message)
                 }
-                UserDefaults.standard.set(nameTextField.text, forKey: "userName")
+                UserDefaults.standard.set(nameTextField.text, forKey: UserDefaults.Keys.userName)
             case .requestErr(let msg):
                 print("requestErr \(msg)")
                 
             case .pathErr(let loginResponse):
                 guard let response = loginResponse as? SignupDataModel else {return}
-                showAlert(title: "회원가입", message: response.message, okAction: nil)
+                self.showAlert(title: "회원가입", message: response.message, okAction: nil)
                 print("pathErr")
                 
             case .serverErr:

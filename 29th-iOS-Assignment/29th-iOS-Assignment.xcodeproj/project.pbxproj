@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B0F6A93273E439E00F1B3DE /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0F6A92273E439E00F1B3DE /* UserDefaults+Extension.swift */; };
 		2B4816BD2732E6AA003CCE3B /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4816BC2732E6AA003CCE3B /* APIConstants.swift */; };
 		2B4816C02732E83E003CCE3B /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4816BF2732E83E003CCE3B /* NetworkResult.swift */; };
 		2B4816C22732E8CD003CCE3B /* LoginDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4816C12732E8CD003CCE3B /* LoginDataModel.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		1E0BF1C4A0D185311E8AC6CE /* Pods-29th-iOS-Assignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-29th-iOS-Assignment.release.xcconfig"; path = "Target Support Files/Pods-29th-iOS-Assignment/Pods-29th-iOS-Assignment.release.xcconfig"; sourceTree = "<group>"; };
+		2B0F6A92273E439E00F1B3DE /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		2B4816BC2732E6AA003CCE3B /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		2B4816BF2732E83E003CCE3B /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		2B4816C12732E8CD003CCE3B /* LoginDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataModel.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			children = (
 				2BE4D6E52715F0DD00436945 /* UIVIewController+Extension.swift */,
 				2BC3B1AD2729C24300240249 /* UIView+Extension.swift */,
+				2B0F6A92273E439E00F1B3DE /* UserDefaults+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				2B4816C22732E8CD003CCE3B /* LoginDataModel.swift in Sources */,
 				2BC3B1B52729D0C700240249 /* HomeContentTVC.swift in Sources */,
 				2BF508E6270B0EE6004EF83D /* SignupVC.swift in Sources */,
+				2B0F6A93273E439E00F1B3DE /* UserDefaults+Extension.swift in Sources */,
 				2B6D2522273AE4580079B36D /* SignupDataModel.swift in Sources */,
 				2BF508E8270B0F18004EF83D /* SuccessVC.swift in Sources */,
 				2BBF45BF2716892B00686134 /* ShortsVC.swift in Sources */,
