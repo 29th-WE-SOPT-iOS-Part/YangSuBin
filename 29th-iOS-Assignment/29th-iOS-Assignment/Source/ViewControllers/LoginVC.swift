@@ -131,16 +131,17 @@ extension LoginVC {
                     self.showAlert(title: "로그인", message: response.message)
                 }
                 UserDefaults.standard.set(nameTextField.text, forKey: UserDefaults.Keys.userName)
-            case .requestErr(let msg):
-                print("requestErr \(msg)")
-                
-            case .pathErr(let loginResponse):
+            case .requestErr(let loginResponse):
                 guard let response = loginResponse as? LoginDataModel else {return}
                 self.showAlert(title: "로그인", message: response.message, okAction: nil)
+                print("requestErr")
+                
+            case .pathErr:
                 print("pathErr")
                 
             case .serverErr:
                 print("serverErr")
+                
             case .networkFail:
                 print("networkFail")
             }

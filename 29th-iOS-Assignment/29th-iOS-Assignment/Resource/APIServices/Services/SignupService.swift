@@ -54,7 +54,6 @@ struct SignupService {
         switch statuscode {
         case 200: return isValidSignupData(data: data)
         case 400:
-//            return .pathErr
             return isInvalidSignupData(data: data)
         case 500: return .serverErr
         default: return .networkFail
@@ -69,7 +68,7 @@ struct SignupService {
     
     private func isInvalidSignupData(data: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
-        guard let decodedData = try? decoder.decode(SignupDataModel.self, from: data) else {return .networkFail}
-        return .pathErr(decodedData)
+        guard let decodedData = try? decoder.decode(SignupDataModel.self, from: data) else {return .pathErr}
+        return .requestErr(decodedData)
     }
 }

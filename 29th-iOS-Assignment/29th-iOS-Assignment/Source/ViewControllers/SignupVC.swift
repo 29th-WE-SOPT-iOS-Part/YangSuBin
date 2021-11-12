@@ -129,16 +129,17 @@ extension SignupVC {
                     self.showAlert(title: "회원가입", message: response.message)
                 }
                 UserDefaults.standard.set(nameTextField.text, forKey: UserDefaults.Keys.userName)
-            case .requestErr(let msg):
-                print("requestErr \(msg)")
-                
-            case .pathErr(let loginResponse):
+            case .requestErr(let loginResponse):
                 guard let response = loginResponse as? SignupDataModel else {return}
                 self.showAlert(title: "회원가입", message: response.message, okAction: nil)
+                print("requestErr")
+                
+            case .pathErr:
                 print("pathErr")
                 
             case .serverErr:
                 print("serverErr")
+                
             case .networkFail:
                 print("networkFail")
             }
