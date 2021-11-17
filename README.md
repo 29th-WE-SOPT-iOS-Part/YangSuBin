@@ -7,7 +7,7 @@
 | `1주차` | iOS 컴포넌트 이해, Xcode 기본 사용법, View 화면 전환 |  feature/#1 | [#2](https://github.com/29th-WE-SOPT-iOS-Part/YangSuBin/pull/2) | ✔️ | 
 | `2주차` | AutoLayout, StackView, TabBarController |[feature/#4-assiginment-2](https://github.com/29th-WE-SOPT-iOS-Part/YangSuBin/tree/feature/%234-assignment-2)| [#6](https://github.com/29th-WE-SOPT-iOS-Part/YangSuBin/pull/6) | ✔️ |
 | `3주차` | ScrollView, TableView, CollectionView | [feature/#7-assignment-3](https://github.com/29th-WE-SOPT-iOS-Part/YangSuBin/tree/feature/%237-assignment-3) | [#8](https://github.com/29th-WE-SOPT-iOS-Part/YangSuBin/pull/8) | ✔️ |
-| `4주차` | Cocoapods & Networking, REST API |  |  | 
+| `4주차` | Cocoapods & Networking, REST API | [feature/#9-assignment-4](https://github.com/29th-WE-SOPT-iOS-Part/YangSuBin/tree/feature/%239-assignment-4) | [#12](https://github.com/29th-WE-SOPT-iOS-Part/YangSuBin/pull/12) | ✔️ |
 | `5주차` | 디자인 합동 세미나 |  |  | 
 |`6주차`| 서버 합동 세미나 + 솝커톤 | | | |
 |`7주차`| Animation과 제스처, 데이터 전달 심화 | | | |
