@@ -1,5 +1,5 @@
 //
-//  SuccessViewController.swift
+//  SuccessVC.swift
 //  29th-iOS-Assignment
 //
 //  Created by 양수빈 on 2021/10/04.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SuccessViewController: UIViewController {
+class SuccessVC: UIViewController {
 
     // MARK: - Properties
     @IBOutlet weak var logoImageView: UIImageView!
@@ -33,7 +33,7 @@ class SuccessViewController: UIViewController {
     
     /// 받아온 이름 넣는 함수
     func setNameLabel() {
-        if let name = message {
+        if let name = UserDefaults.standard.string(forKey: UserDefaults.Keys.userName) {
             nameLabel.text = "\(name)님\n환영합니다!"
             nameLabel.sizeToFit()
         }
@@ -60,7 +60,7 @@ class SuccessViewController: UIViewController {
 }
 
 // MARK: - Layout
-extension SuccessViewController {
+extension SuccessVC {
     func setupLayout() {
         logoImageView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(207)

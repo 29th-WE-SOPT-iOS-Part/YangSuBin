@@ -80,6 +80,16 @@ class HomeVC: UIViewController {
         contentTableView.delegate = self
         contentTableView.dataSource = self
     }
+    
+    @IBAction func touchUpProfileButton(_ sender: Any) {
+        /// present 화면 전환
+        /// YoutubeMain 스토리보드의 HomeVC -> Main 스토리보드의 navigationController
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        guard let navi = storyboard.instantiateViewController(withIdentifier: "MainNavi") as? UINavigationController else {return}
+        
+        navi.modalPresentationStyle = .fullScreen
+        present(navi, animated: true, completion: nil)
+    }
 }
 
 // MARK: - Layout

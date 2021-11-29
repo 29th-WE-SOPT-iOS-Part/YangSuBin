@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  LoginVC.swift
 //  29th-iOS-Assignment
 //
 //  Created by 양수빈 on 2021/10/04.
@@ -9,7 +9,7 @@ import UIKit
 
 import SnapKit
 
-class LoginViewController: UIViewController {
+class LoginVC: UIViewController {
 
     // MARK: - Properties
     @IBOutlet weak var logoImageView: UIImageView!
@@ -50,17 +50,14 @@ class LoginViewController: UIViewController {
     
     // MARK: - @IBAction
     @IBAction func touchUpToSuccess(_ sender: Any) {
-        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SuccessViewController") as? SuccessViewController else {return}
-        
-        nextVC.message = nameTextField.text
-        nextVC.modalPresentationStyle = .fullScreen
-        self.present(nextVC, animated: true, completion: nil)
+        requestLogin()
     }
     
     @IBAction func touchUpToSignup(_ sender: Any) {
-        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SignupViewController") else {return}
-        
-        self.navigationController?.pushViewController(nextVC, animated: true)
+        /// push 화면 전환
+        /// Main 스토리보드의 LoginVC -> Main 스토리보드의 SignupVC
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SignupVC") else {return}
+        navigationController?.pushViewController(nextVC, animated: true)
     }
     
     // MARK: - @objc
@@ -72,7 +69,7 @@ class LoginViewController: UIViewController {
 }
 
 // MARK: - Layout
-extension LoginViewController {
+extension LoginVC {
     func setupLayout() {
         logoImageView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(100)
@@ -119,6 +116,35 @@ extension LoginViewController {
             make.trailing.equalToSuperview().inset(22)
             make.width.equalTo(74)
             make.height.equalTo(50)
+        }
+    }
+}
+
+// MARK: - Network
+extension LoginVC {
+    func requestLogin() {
+        LoginService.shared.login(email: emailTextField.text ?? "", password: pwTextField.text ?? "") { [self] responseData in
+            switch responseData {
+            case .success(let loginResponse):
+                guard let response = loginResponse as? LoginDataModel else {return}
+                if response.data != nil {
+                    self.showAlert(title: "로그인", message: response.message)
+                }
+                UserDefaults.standard.set(nameTextField.text, forKey: UserDefaults.Keys.userName)
+            case .requestErr(let loginResponse):
+                guard let response = loginResponse as? LoginDataModel else {return}
+                self.showAlert(title: "로그인", message: response.message, okAction: nil)
+                print("requestErr")
+                
+            case .pathErr:
+                print("pathErr")
+                
+            case .serverErr:
+                print("serverErr")
+                
+            case .networkFail:
+                print("networkFail")
+            }
         }
     }
 }

@@ -1,5 +1,5 @@
 //
-//  SignupViewController.swift
+//  SignupVC.swift
 //  29th-iOS-Assignment
 //
 //  Created by 양수빈 on 2021/10/04.
@@ -9,7 +9,7 @@ import UIKit
 
 import SnapKit
 
-class SignupViewController: UIViewController {
+class SignupVC: UIViewController {
 
     // MARK: - Properties
     @IBOutlet weak var logoImageView: UIImageView!
@@ -48,11 +48,7 @@ class SignupViewController: UIViewController {
     
     // MARK: - @IBAction
     @IBAction func touchUpToSuccess(_ sender: Any) {
-        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SuccessViewController") as? SuccessViewController else {return}
-        
-        nextVC.message = nameTextField.text
-        nextVC.modalPresentationStyle = .fullScreen
-        self.present(nextVC, animated: true, completion: nil)
+        requestSignup()
     }
     
     // MARK: - @objc
@@ -71,7 +67,7 @@ class SignupViewController: UIViewController {
 }
 
 // MARK: - Layout
-extension SignupViewController {
+extension SignupVC {
     func setupLayout() {
         logoImageView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(100)
@@ -118,6 +114,35 @@ extension SignupViewController {
             make.top.equalTo(showPwButton.snp.bottom).offset(31)
             make.leading.trailing.equalToSuperview().inset(22)
             make.height.equalTo(50)
+        }
+    }
+}
+
+// MARK: - Network
+extension SignupVC {
+    func requestSignup() {
+        SignupService.shared.signup(email: emailTextField.text ?? "", name: nameTextField.text ?? "", password: pwTextField.text ?? "") { [self] responseData in
+            switch responseData {
+            case .success(let signupResponse):
+                guard let response = signupResponse as? SignupDataModel else {return}
+                if response.data != nil {
+                    self.showAlert(title: "회원가입", message: response.message)
+                }
+                UserDefaults.standard.set(nameTextField.text, forKey: UserDefaults.Keys.userName)
+            case .requestErr(let loginResponse):
+                guard let response = loginResponse as? SignupDataModel else {return}
+                self.showAlert(title: "회원가입", message: response.message, okAction: nil)
+                print("requestErr")
+                
+            case .pathErr:
+                print("pathErr")
+                
+            case .serverErr:
+                print("serverErr")
+                
+            case .networkFail:
+                print("networkFail")
+            }
         }
     }
 }

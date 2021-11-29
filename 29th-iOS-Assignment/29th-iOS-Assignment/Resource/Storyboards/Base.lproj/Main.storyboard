@@ -11,7 +11,7 @@
         <!--LoginViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" title="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="_9th_iOS_Assignment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" title="LoginViewController" id="BYZ-38-t0r" customClass="LoginVC" customModule="_9th_iOS_Assignment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -99,7 +99,7 @@
         <!--SignupViewController-->
         <scene sceneID="gbG-Ro-IaQ">
             <objects>
-                <viewController storyboardIdentifier="SignupViewController" title="SignupViewController" id="alP-Hy-CwU" customClass="SignupViewController" customModule="_9th_iOS_Assignment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignupVC" title="SignupViewController" id="alP-Hy-CwU" customClass="SignupVC" customModule="_9th_iOS_Assignment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dlc-9B-jvM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -178,10 +178,10 @@
             </objects>
             <point key="canvasLocation" x="1871.0144927536232" y="118.52678571428571"/>
         </scene>
-        <!--Success View Controller-->
+        <!--SuccessVC-->
         <scene sceneID="Loj-tL-NdS">
             <objects>
-                <viewController storyboardIdentifier="SuccessViewController" id="gkV-Sw-GPO" customClass="SuccessViewController" customModule="_9th_iOS_Assignment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SuccessVC" id="gkV-Sw-GPO" customClass="SuccessVC" customModule="_9th_iOS_Assignment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qPy-Gm-M0k">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -238,7 +238,7 @@
         <!--Navigation Controller-->
         <scene sceneID="uSn-2r-LhZ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="93r-4K-lOa" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainNavi" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="93r-4K-lOa" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YPh-Im-x7i">
                         <autoresizingMask key="autoresizingMask"/>
